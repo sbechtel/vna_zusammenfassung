@@ -30,7 +30,12 @@
 \newcommand{\C}{\mathbb{C}} % komplexe Zahlen
 \newcommand{\D}{\mathcal{D}}
 \newcommand{\E}{\mathcal{E}}
+\newcommand{\Hc}{\mathcal{H}}
 \newcommand{\Sc}{\mathcal{S}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\Nc}{\mathcal{N}}
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\norm}[1]{\|#1\|}
 \newcommand{\laplace}{\triangle}
@@ -61,6 +66,12 @@
 \DeclareMathOperator{\loc}{loc}
 \DeclareMathOperator{\pv}{pv}
 \DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\Bil}{Bil}
+\DeclareMathOperator{\Lin}{Lin}
+\DeclareMathOperator{\Mult}{Mult}
+\DeclareMathOperator{\LH}{LH}
+\DeclareMathOperator{\Rang}{Rang}
+\DeclareMathOperator{\Spur}{Spur}
 
 \begin{document}
 
@@ -68,5 +79,38 @@
 \author{Sebastian Bechtel}
 \maketitle
 
+\section{Tensorprodukte}
+
+\subsection{algebraische Theorie}
+
+Seien $E,F$ Vektorräume, $E^*,F^*$ ihre algebraischen Duale. Bezeichne mit $\Bil(E^*,F^*)$ die bilinearen Funktionale auf $E^*\times F^*$. Für $e\in E, f\in F$ definiere $e\otimes f\in \Bil(E^*, F^*)$ via $e\otimes f(e',f')\coloneqq e'(e)f'(f)$. Es heißt $e\otimes f$ \emph{elementarer Tensor} und $E\otimes F\coloneqq \LH \{e\otimes f: e\in E, f\in F\}$ heißt das \emph{Tensorprodukt} von $E$ mit $F$. Die Zuordnung $i: E\times F \ni (e,f) \mapsto e\otimes f \in E\otimes F$ ist bilinear und aus $0\neq e\in E, 0\neq f\in F$ folgt $e\otimes f \neq 0$, jedoch ist $i$ nicht injektiv. Ist $(e_i)$ Basis von $E$, $(f_j)$ Basis von $F$, dann $\{e_i\otimes f_j: i\in I, j\in J\}$ Basis von $E\otimes F$. Für einen weiteren Vektorraum $W$ gilt die Isomorphie $\Bil(E\times F, W)\cong \Lin(E\otimes F, W)$.
+
+Darstellung eines Tensors ist nicht eindeutig, aber für eine minimale Darstellung (d.h. Anzahl der Summanden ist minimal) $x=\sum_{i=1}^n e_i\otimes f_i$ gilt $\{e_1,\dots,e_n\}$ sowie $\{f_1,\dots,f_n\}$ l.u. (und umgekehrt, vgl. endlich-Rang Operatoren!) und ist $0=\sum_{i=1}^n e_i\otimes f_i$ und $\{e_1,\dots,e_n\}$ l.u., so folgt $f_i=0$ für alle $i$.
+
+\subsubsection{Tensorprodukt von linearen Abbildungen}
+
+Für $A\in \Lin(E,E_1), B\in \Lin(F,F_1)$ gibt es eindeutige (universelle Eigenschaft!) lineare Abbildung $A\boxtimes B: E\otimes F \ni (e,f)\mapsto Ae\otimes Bf \in E_1\otimes F_1$. Wir wollen gerne $A\otimes B$ für $A\boxtimes B$ schreiben. Dazu identifizieren wir $\Lin(E,E_1)\otimes \Lin(F,F_1)$ mit einem Unterraum von $\Lin(E\otimes F, E_1\otimes F_1)$. Wegen $\Lin(E,E_1)\times \Lin(F,F_1) \ni (A,B) \mapsto A\boxtimes B \in \Lin(E\otimes F, E_1\otimes F_1)$ bilinear gibt es $\beta: \Lin(E,E_1)\otimes \Lin(F,F_1) \to \Lin(E\otimes F, E_1\otimes F_1)$ mit $\beta(A\otimes B) = A\boxtimes B$. Man zeigt, dass $\beta$ injektiv ist und kann dann wie gewünscht $A\otimes B$ mit $A\boxtimes B$ identizifieren.
+
+\subsubsection{Tensorprodukt von Algebren}
+
+Sind $\A,\B$ Algebren, so gibt es eindeutige Multiplikation auf $\A\otimes \B$ mit $x\otimes y \cdot x'\otimes y' = xx'\otimes yy'$.
+
+\subsubsection{n-faches Tensorprodukt über Linearformen}
+
+Erhalte Einbettung $E_1\otimes \dots \otimes E_n \hookrightarrow \Mult(E_1^*\times \dots \times E_n^*, \K)$ via $m(e_1\otimes \dots \otimes e_n) \coloneqq ((e_1', \dots, e_n')\mapsto e_1'(e_1)\cdot \dots \cdot e_n'(e_n)$. Dann $E_1\otimes \dots \otimes E_n \cong m(E_1\otimes \dots \otimes E_n)$.
+
+\subsubsection{Tensorprodukt über endlich-Rang Operatoren}
+
+Für $e\in E, f\in F$ definiere $t_{e,f}: E^*\ni e' \mapsto \langle e, e' \rangle f$, also $t_{e,f}\in \Lin(E^*,F)$. Es ist $E\times F \ni (e,f) \mapsto t_{e,f}$ bilinear, also gibt es $\beta: E\otimes F \to \Lin(E^*,F)$ mit $\beta(e\otimes f) = t_{e,f}$, welches injektiv ist, also $E\otimes F \hookrightarrow \Lin(E^*,F)$.
+
+Ist $E\neq E^{**}$, so ist $\beta$ sicher nicht surjektiv!
+
+Der \emph{Rang eines Tensors} $x\in E\otimes F$ ist gegeben durch $\Rang(\beta(x))$ und stimmt mit der Länge einer minimalen Darstellung überein.
+
+Betrachte nun $\beta: E^*\otimes F \to \F(E^{**},F)$. Diese ist nach wie vor injektiv, aber i.A. nicht surjektiv. Wenn wir jedoch $\beta(e'\otimes f)|_{E\subset E^{**}}$ betrachten, so bleibt die Zuordnung injektiv und wird sogar surjektiv, also $E^*\otimes F \cong \F(E,F)$. Wir können also die endlich-Rang Operatoren als Tensorprodukt verstehen! Dies gilt ferner für die topologischen Dualräume.
+
+\subsubsection{Beispiel: Matrizen als TP und ihre Spur}
+
+Betrachte $(\K^n)^* \otimes \K^m$. Es ist $t_{e_j',e_i}=e_{ij}$, also $m\times n$ Matrizen sind Tensorprodukt. Ist $A$ eine $m\times n$-Matrix mit Zeilen $a_1,\dots,a_m \in (\K^n)^*$, so ist $A=\sum_{j=1}^m a_j \otimes e_j$, analog: sind $b_1,\dots,b_n \in \K^m$ die Spalten von $A$, so gilt $A=\sum_{i=1}^n e_i \otimes b_i$. Definiere $(\K^n)^* \times \K^n \ni (x',y)\mapsto \langle y, x' \rangle$ bilinear, diese besitzt Fortsetzung $\tau: (\K^n)^*\otimes \K^n = M_n \to \K$ mit $\tau(A)=\Spur(A)$. Nutze dies später, um den Begriff der Spur zu verallgemeinern!
 
 \end{document}
