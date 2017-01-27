@@ -72,12 +72,25 @@
 \DeclareMathOperator{\LH}{LH}
 \DeclareMathOperator{\Rang}{Rang}
 \DeclareMathOperator{\Spur}{Spur}
+\DeclareMathOperator{\vN}{vN}
 
 \begin{document}
 
 \title{Zusammenfassung von Neumann Algebren}
 \author{Sebastian Bechtel}
 \maketitle
+
+\section{Erster Kontakt}
+
+Eine *-Algebra $\M \subset \B(\Hc)$ heißt \emph{Operatoralgebra}. Ist $\M$ stop-abgeschlossen, so heißt $\M$ \emph{von Neumann Algebra (vNA)}. Durch GNS-Darstellung lässt sich jede C*-Algebra als Operatoralgebra darstellen. Sei $\Sc \subset \B(\Hc)$, da der Schnitt von vNAen wieder vNA ist, existiert kleinste vNA $\vN(\Sc)$, die $\Sc$ enthält. Ist $\Sc$ Operatoralgebra, so gilt $\vN(\Sc)=\overline{\Sc}^{stop}$, dies ist aber nicht offensichtlich, da Involution nicht stop-stetig ist!
+
+Für $\M \subset \B(\Hc)$ ist die \emph{Kommutante} gegeben durch $\M'\coloneqq \{ x\in\B(\Hc): xy=yx \text{ für all } y\in \M \}$. Es gilt immer $\M'$ stop-abgeschlossen und ist $\M$ Operatoralgebra, so auch $\M'$, somit $\M'$ vNA. Ferner gilt $1_\Hc\in \M'$ und $\M'=\M'''$ (wegen $\M\subset \M''$), also gilt für $\M$ Operatoralgebra auch nach Bikommutantensatz (vgl. später) $\M'$ vNA! Aus $\M \subset \M''$ folgt für $\M$ Operatoralgebra, dass $\vN(\M)\subset \M''$. Ist $1_\Hc\in M$, so folgt mit Bikommutantensatz $\M''\subset \vN(\M)''=\vN(\M)$, also $\M''=\vN(\M)$. Ist $\M$ nicht s.a., geht alles schief: Die Matrizen $\left(\begin{smallmatrix} 0 & a \\ 0 & 0 \end{smallmatrix}\right)$ haben als Kommutante $\left(\begin{smallmatrix} b & c \\ 0 & b \end{smallmatrix}\right)$, also ist jene nicht s.a., somit folgt wegen $\M'=\M'''$, dass Bikommutantenbildung keine Selbstadjungiertheit herbeiführt.
+
+\subsection{Beispiel: $L^\infty$ ist vNA}
+
+Durch $L^\infty \ni g \mapsto M_g \in \B(L^2)$ wird $L^\infty$ als Operatoralgebra dargestellt, vgl. Borel-FK. Ist $(\Omega,\Sigma,\mu)$ lokalisierbar, so zerlege $L^2(\Omega)$ in direkte Summe $\oplus_i L^2(\Omega_i)$ mit $\mu(\Omega_i) < \infty$. Zeige dann für einen solchen Summanden, dass er seine eigene Kommutante ist, somit vNA.
+
+% TODO Beweis skizzieren. Warum M_f|_{L^\infty} bzgl. L^2-Operatornorm beschränkt?
 
 \section{Tensorprodukte}
 
