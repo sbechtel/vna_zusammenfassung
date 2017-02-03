@@ -126,4 +126,21 @@ Betrachte nun $\beta: E^*\otimes F \to \F(E^{**},F)$. Diese ist nach wie vor inj
 
 Betrachte $(\K^n)^* \otimes \K^m$. Es ist $t_{e_j',e_i}=e_{ij}$, also $m\times n$ Matrizen sind Tensorprodukt. Ist $A$ eine $m\times n$-Matrix mit Zeilen $a_1,\dots,a_m \in (\K^n)^*$, so ist $A=\sum_{j=1}^m a_j \otimes e_j$, analog: sind $b_1,\dots,b_n \in \K^m$ die Spalten von $A$, so gilt $A=\sum_{i=1}^n e_i \otimes b_i$. Definiere $(\K^n)^* \times \K^n \ni (x',y)\mapsto \langle y, x' \rangle$ bilinear, diese besitzt Fortsetzung $\tau: (\K^n)^*\otimes \K^n = M_n \to \K$ mit $\tau(A)=\Spur(A)$. Nutze dies später, um den Begriff der Spur zu verallgemeinern!
 
+\subsection{topologische Tensorprodukte}
+
+\subsubsection{Tensorprodukte von Hilberträumen}
+
+Bezeichne mit $\odot$ das algebraische Tensorprodukt. Sind $\Hc,\Kc$ Hilberträume, so gibt es auf $\Hc\odot \Kc$ ein eindeutiges Skalarprodukt $\langle \cdot, \cdot \rangle_{HS}$ mit $\langle x\otimes y, x'\otimes y' \rangle_{HS} = \langle x,x' \rangle_\Hc \langle y, y' \rangle_\Kc$. Also ist $(\Hc\otimes \Kc, \langle \cdot, \cdot \rangle_{HS})$ Prähilbertraum. Dessen Vervollständigung heißt \emph{Hilbertraumtensorprodukt} von $\Hc$ und $\Kc$, schreibe $\Hc \otimes_{HS} \Kc$ bzw. $\Hc \otimes \Kc$. Die induzierte Norm $\|\cdot\|_{HS}$ ist eine \emph{Kreuznorn}, d.h. $\|x\otimes y\|_{HS}=\|x\|_\Hc \|y\|_\Kc$ (somit ist $B: \Hc \times \Kc \to W$ bilinear genau dann beschränkt, wenn es $T_B: \Hc \odot \Kc \to W$ ist, also erhalten wir eine topologische Version der universellen Eigenschaft für $\Hc \otimes \Kc$). Außerdem folgt aus $x_i \to x, y_j\to y$, dass $x_i \otimes y_j \to x\otimes y$ und sind $(e_i), (f_j)$ ONBs von $\Hc$ bzw. $\Kc$, so ist $\{ e_i \otimes f_j: i\in I, j\in J \}$ ONB von $\Hc\otimes \Kc$.
+
+Beispiele: 1) Es gilt $l^2(I)\otimes l^2(J) = l^2(I\times J)$ (Dimensionsvergleich!) 2) Sind $(\Omega_1, \Sigma_1,\mu_1), (\Omega_2,\Sigma_2,\mu_2)$ $\sigma$-endliche Maßräume, dann gilt $L^2(\Omega_1\times \Omega_2) \cong L^2(\Omega_1)\otimes L^2(\Omega_2)$ und der unitäre Operator ist eindeutig mit $U(f_1\otimes f_2) = f_1(\omega_1)f_2(\omega_2)$ (nutze topologische universelle Eigenschaft!)
+
+Sind $A\in \B(\Hc), B\in \B(\Kc)$, denn gibt es eindeutigen Operator $A\otimes B\in \B(\Hc\otimes \Kc)$ mit $A\otimes B(x\otimes y)=Ax\otimes By$ und es gilt $\|A\otimes B\|=\|A\|\|B\|$. Eindeutigkeit folgt aus der Eindeutigkeit auf dem dichten algebraischen Tensorprodukt. Zeige $\|A\otimes B\|=\|A\|\|B\|$ auf $\Hc \odot \Kc$, dann stetige Fortsetzung. Nutze $A\otimes B=(A\otimes 1_\Kc)(1_\Hc\otimes B)$ (denn $((A\otimes 1_\Kc)(1_\Hc\otimes B))(x\otimes y)=A\otimes 1_\Kc(x\otimes By)=Ax\otimes By$) und $\|A\otimes 1_\Kc\| \leq \|A\|$. Außerdem gilt $(A\otimes B)^*=A^*\otimes B^*$.
+
+\subsection{Tensorprodukte auf Banachräumen}
+
+Seien $E,F$ Banachräume. Auf $E\odot F$ wird durch $\|z\|_\pi \coloneqq \inf \{ \sum_i \|x_i\|_E \|y_i\|_F: z = \sum_i x_i \otimes y_i \}$ eine Kreuznorm definiert, welche \emph{projektive Norm} oder \emph{maximale Norm} heißt. Motivation: Für eine Kreuznorm $\|\cdot\|$ gilt $\|z\|\leq \sum_i \|x_i\|\|y_i\|$ wegen Dreiecksungleichung und Kreuznormeigenschaft. Beachte, dass Supremum keinen Sinn machen würde, da wegen $0=x\otimes y + (-x)\otimes y$ für $x,y\neq 0$ bereits die Definitheit verletzt wäre.
+
+Wiederum auf $E\odot F$ definieren wir eine weiter Norm, genannt \emph{injektive Norm} oder \emph{$\varepsilon$-Tensornorm}, durch $\|z\|_\varepsilon \coloneqq \sup \{ |e'\otimes f'(z)|: e'\in E^*_1, f'\in F^*_1 \}$. Die Kreuznormeigenschaft folgt aus Hahn-Banach: zu $x\in E, y\in F$ gibt es $e'\in E^*_1, f'\in F^*_1$ mit $e'(x)=\|x\|_E, f'(y)=\|y\|_F$, also $\|x\otimes y\|_\varepsilon \geq |e'\otimes f'(x\otimes y)|=\|x\|_E \|y\|_F$.
+
+
 \end{document}
