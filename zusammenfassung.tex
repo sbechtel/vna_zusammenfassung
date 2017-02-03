@@ -142,5 +142,19 @@ Seien $E,F$ Banachräume. Auf $E\odot F$ wird durch $\|z\|_\pi \coloneqq \inf \{
 
 Wiederum auf $E\odot F$ definieren wir eine weiter Norm, genannt \emph{injektive Norm} oder \emph{$\varepsilon$-Tensornorm}, durch $\|z\|_\varepsilon \coloneqq \sup \{ |e'\otimes f'(z)|: e'\in E^*_1, f'\in F^*_1 \}$. Die Kreuznormeigenschaft folgt aus Hahn-Banach: zu $x\in E, y\in F$ gibt es $e'\in E^*_1, f'\in F^*_1$ mit $e'(x)=\|x\|_E, f'(y)=\|y\|_F$, also $\|x\otimes y\|_\varepsilon \geq |e'\otimes f'(x\otimes y)|=\|x\|_E \|y\|_F$.
 
+\section{Die vNA $\B(\Hc)$}
+
+\subsection{Projektionen}
+
+Ein $p\in \B(\Hc)$ heißt \emph{Projektion}, falls $p^2=p$ gilt und \emph{orthogonale Projektion}, falls $p$ Projektion und $p^*=p$. Man nennt $v\in \B(\Hc)$ eine \emph{partielle Isometrie}, falls $v^*v$ eine orthogonale Projektion ist (automatisch s.a., Projektion ist zu prüfen). Ist $v$ Isometrie so ist $\Nc(v)^\perp$ der Anfangsraum von $v$ und $\overline{\Rc(v)}$ der Zielraum von $v$. Es ist $v^*v$ orthogonale Projektion auf den Anfangsraum, genannt \emph{initiale Projektion}, und $vv^*$ ist orthogonale Projektion auf den Zielraum, genannt \emph{finale Projektion}. Zwischen Anfangsraum und Zielraum ist eine partielle Isometrie eine Isometrie.
+
+Für $x\in \B(\Hc)$ definieren wir Anfangsraum und Zielraum wie oben und bezeichnen die initiale Projektion als \emph{Rechtsträger} $s_r(x)$ und die finale Projektion als \emph{Linksträger} $s_l(x)$. Für $x$ s.a. definiere den Träger $s(x)\coloneqq s_l(x)=s_r(x)$ (wegen $\Nc(x)^\perp=\overline{\Rc(x^*)}=\overline{\Rc(x)}$). Es gilt (analog zu den partiellen Isometrien!) $s_l(x)=s(xx^*)$ und $s_r(x)=s(x^*x)$.
+
+\subsubsection{polare Zerlegung}
+
+Eine komplexe Zahl $z$ lässt sich schreiben als $z=e^{i\varphi}|z|$, also $|z| \geq 0$ und
+
+% TODO polare Zerlegung fertig schreiben. Motivation/Analogie zu C: MSE-Thread
+
 
 \end{document}
