@@ -31,11 +31,13 @@
 \newcommand{\D}{\mathcal{D}}
 \newcommand{\E}{\mathcal{E}}
 \newcommand{\Hc}{\mathcal{H}}
+\newcommand{\Kc}{\mathcal{K}}
 \newcommand{\Sc}{\mathcal{S}}
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\Nc}{\mathcal{N}}
+\newcommand{\Rc}{\mathcal{R}}
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\norm}[1]{\|#1\|}
 \newcommand{\laplace}{\triangle}
@@ -88,9 +90,7 @@ Für $\M \subset \B(\Hc)$ ist die \emph{Kommutante} gegeben durch $\M'\coloneqq 
 
 \subsection{Beispiel: $L^\infty$ ist vNA}
 
-Durch $L^\infty \ni g \mapsto M_g \in \B(L^2)$ wird $L^\infty$ als Operatoralgebra dargestellt, vgl. Borel-FK. Ist $(\Omega,\Sigma,\mu)$ lokalisierbar, so zerlege $L^2(\Omega)$ in direkte Summe $\oplus_i L^2(\Omega_i)$ mit $\mu(\Omega_i) < \infty$. Zeige dann für einen solchen Summanden, dass er seine eigene Kommutante ist, somit vNA.
-
-% TODO Beweis skizzieren. Warum M_f|_{L^\infty} bzgl. L^2-Operatornorm beschränkt?
+Durch $L^\infty \ni g \mapsto M_g \in \B(L^2)$ wird $L^\infty$ als Operatoralgebra dargestellt, vgl. Borel-FK. Ist $(\Omega,\Sigma,\mu)$ lokalisierbar, so zerlege $L^2(\Omega)$ in direkte Summe $\oplus_i L^2(\Omega_i)$ mit $\mu(\Omega_i) < \infty$. Zeige dann für einen solchen Summanden, dass er seine eigene Kommutante ist, somit vNA: Sei $T\in L^\infty(\Omega)'$ und setze $f\coloneqq T(1)\in L^2(\Omega)$. Es gilt für $g\in L^\infty$ nun $T(g)=TM_g(1)=M_gT(1)=gf=M_f(g)$, also $T|_{L^\infty}=M_f|_{L^\infty}$, somit $M_f: L^\infty \subset L^2 \to L^2$ beschränkt. Wäre $f\not\in L^\infty$, würde es für $n\in \N$ messbare Mengen $\Omega_n \subset \Omega$ geben mit $|f(\omega)| \geq n$ f.ü. auf $\Omega_n$ und $g_n\coloneqq \chi_{\Omega_n}/\mu(\Omega_n)^{1/2}$ würde Beschränktheit auf $L^\infty$ widersprechen, also $f\in L^\infty$ und $M_f=T$ auf dichter Teilmenge, also $T\in L^\infty$.
 
 \section{Tensorprodukte}
 
