@@ -42,6 +42,7 @@
 \newcommand{\norm}[1]{\|#1\|}
 \newcommand{\laplace}{\triangle}
 \newcommand{\circum}{\text{\textasciicircum}}
+\renewcommand{\Re}{\mathrm{Re}\,}
 
 % Umgebungen für Definitionen, Sätze, usw.
 
@@ -74,6 +75,7 @@
 \DeclareMathOperator{\LH}{LH}
 \DeclareMathOperator{\Rang}{Rang}
 \DeclareMathOperator{\Spur}{Spur}
+\DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\vN}{vN}
 
 \begin{document}
@@ -112,7 +114,7 @@ Sind $\A,\B$ Algebren, so gibt es eindeutige Multiplikation auf $\A\otimes \B$ m
 
 Erhalte Einbettung $E_1\otimes \dots \otimes E_n \hookrightarrow \Mult(E_1^*\times \dots \times E_n^*, \K)$ via $m(e_1\otimes \dots \otimes e_n) \coloneqq ((e_1', \dots, e_n')\mapsto e_1'(e_1)\cdot \dots \cdot e_n'(e_n)$. Dann $E_1\otimes \dots \otimes E_n \cong m(E_1\otimes \dots \otimes E_n)$.
 
-\subsubsection{Tensorprodukt über endlich-Rang Operatoren}
+\subsubsection{Operatoren endlichen Ranges als Tensorprodukt}
 
 Für $e\in E, f\in F$ definiere $t_{e,f}: E^*\ni e' \mapsto \langle e, e' \rangle f$, also $t_{e,f}\in \Lin(E^*,F)$. Es ist $E\times F \ni (e,f) \mapsto t_{e,f}$ bilinear, also gibt es $\beta: E\otimes F \to \Lin(E^*,F)$ mit $\beta(e\otimes f) = t_{e,f}$, welches injektiv ist, also $E\otimes F \hookrightarrow \Lin(E^*,F)$.
 
@@ -156,5 +158,42 @@ Eine komplexe Zahl $z$ lässt sich schreiben als $z=e^{i\varphi}|z|$, also $|z| 
 
 % TODO polare Zerlegung fertig schreiben. Motivation/Analogie zu C: MSE-Thread
 
+\subsection{Die Spur auf $\B(\Hc)$ (vgl. Ü.A. 34, 37)}
+
+Sei $(e_i)$ ONB von $\C^n$ und $T\in \B(\C^n)$ mit Darstellungsmatrix $A$. Dann definiert man $\Spur(A)=\sum_i a_{ii}$. Nun gilt aber $\sum_i a_{ii} = \sum_i \langle Te_i, e_i \rangle$. Diese Formel wollen wir auf beliebige Hilberträume verallgemeinern!
+
+Nun sei also $\Hc$ wieder beliebiger Hilbertraum und $(e_i)$ ONB von $\Hc$. Ist $0\leq x\in \B(\Hc)$, so ist $\tr(x)\coloneqq \sum_i \langle x e_i, e_i \rangle \in [0,\infty]$ definiert. Ist $x\in \B(\Hc)$, so gilt $\tr(x^*x)=\tr(xx^*)$ wegen $\langle x^*x e_i, e_i \rangle = \langle e_i, xx^* e_i \rangle = \overline{\langle xx^* e_i, e_i \rangle} = \langle xx^* e_i, e_i \rangle$, also für $0 \leq x$ und $u$ unitär: $\tr(u^*xu)=\tr(u^*x^{1/2}x^{1/2}u)=\tr((x^{1/2}u)^*x^{1/2}u)=\tr(x^{1/2}uu^*x^{1/2})=\tr(x)$, somit ist $\tr$ für positive Operatoren basisunabhängig!
+
+Ist nun $x\in \F(\Hc)$, so können wir $x$ als Linearkombination positiver Endlichrangoperatoren schreiben ($\Re x = 1/2(x+x^*) \in \F(\Hc)$ und dann durch Einteilung der Eigenwerte in positive und negative). Existenz der Reihe ist dann klar und wegen Basisunabhängigkeit entspricht $\tr$ der Summe der endlich vielen Eigenwerte, also $\tr(x) < \infty$.
+
+Die Basisunabhängigkeit überträgt sich ebenso auf den Fall von Endlichrangoperatoren. Ist $x\in \F(\Hc)$ und $y\in \B(\Hc)$ (oBdA unitär), so gilt $\tr(xy)=\tr(yx)$, denn $yx\in \F(\Hc)$ und $\tr(xy)=\tr(y^*yxy)=\tr(yx)$.
+
+\subsubsection{Bezug zu reinen Zuständen auf $M_n$ (vgl. Ü.A. 58 Spektraltheorie)}
+
+Es ist $M_n\times M_n \ni (x,y) \mapsto \tr(y^*x)$ ein Skalarprodukt auf $M_n$, aus Riesz-Frechet folgt, dass ein Funktional $\varphi$ auf $M_n$ durch eine Dichtematrix $\Phi$ via $\varphi(x)=\tr(\Phi x)$ dargestellt werden kann. Ist $\Phi \geq 0$ und $\tr(\Phi)=1$, so ist $\varphi$ ein Zustand. Dieser ist genau dann rein, wenn $\Phi$ eine eindimensionale orthogonale Projektion ist.
+
+Man rechnet leicht nach, dass $\tr(x t_{\xi,\eta})=\tr(t_{\xi,x\eta})=\langle x\eta, \xi \rangle$ gilt. Ist also $\Phi=t_{\xi,\xi}$ eindimensionale orthogonale Projektion und $x\in M_n$, so gilt $\varphi(x)=\tr(\Phi x)=\tr(x \Phi)=\langle x\xi, \xi \rangle$, also ist $\varphi$ Vektorzustand!
+
+\section{Wichtige Operatorklassen und deren Konstruktion über Tensorprodukte}
+
+Wir hatten gesehen, dass $E^*\odot E \cong \F(E,F)$ gilt. Ist $E=\Hc$ ein Hilbertraum, so würden wir gerne statt $\odot$ auch $\otimes_{HS}$ bilden können (dies wird auf die Klasse der Hilbert-Schmidt-Operatoren führen). Allerdings ist $\Hc^*$ kein Hilbertraum, wenn man durch die Riesz-Frechet-Identifikation das Skalarprodukt von $\Hc$ zurückziehen will. Wir statten deshalb $\Hc^*$ mit einer neuen Skalarmultiplikation und einem geeigneten Skalarprodukt aus, um so $\Hc^*$ zu einem Hilbertraum zu machen, mit dem $\Hc^*\times \Hc \ni (\xi,\eta) \mapsto t_{\xi,\eta}$ bilinear ist.
+
+\subsection{Operatoren endlichen Ranges}
+
+Ein Operator $x\in \B(\Hc,\Kc)$ ist genau dann ein Operator endlichen Ranges, $x\in \F(\Hc,\Kc)$, wenn es ONSe $\{e_1,\dots,e_n\}$ in $\Hc$, $\{f_1,\dots,f_n\}$ von $\Kc$ gibt mit $x=\sum_i \lambda_i t_{e_i,f_i}$. Nutze dazu die polare Zerlegung $x=v|x|$, dann ist $|x|$ ebenso Endlichrangoperator und kann nach dem Spektralsatz der linearen Algebra als $|x|=\sum_i \lambda_i t_{e_i,e_i}$ geschrieben werden. Dann erhält man die gewünschte Darstellung, wenn man das zweite ONS via $f_i\coloneqq ve_i$ definiert. Aus dieser Äquivalenz ist wegen $t_{\xi,\eta}^*=t_{\eta,\xi}$ auch klar, dass $x\in\F(\Hc,\Kc)$ genau dann wenn $x^*\in\F(\Kc,\Hc)$.
+
+Daraus folgt auch die sogenannte \emph{Hilbert-Schmidt-Darstellung} eines Tensors: Ist $x=\sum_i \xi_i\otimes \eta_i \in \Hc\odot \Kc$, so gibt es ONSe $\{e_1,\dots,e_n\}$ von $\Hc$, $\{f_1,\dots,f_n\}$ von $\Kc$ sowie $\lambda_1,\dots,\lambda_n > 0$ mit $x=\sum_i \lambda_i e_i\otimes f_i$.
+
+\subsection{kompakte Operatoren}
+
+Für $x\in \Hc\odot \Kc$ gilt $\|x\|_\varepsilon = \|\beta(x)\|_\mathrm{op}$. Somit folgt $\Hc \otimes_\varepsilon \Hc \cong K(\Hc)$.
+
+\subsection{Hilbert-Schmidt-Operatoren}
+
+Sind $\xi,\eta\in \Hc^*\odot \Hc$ und seien $x\coloneqq \beta(\xi), y\coloneqq \beta(\eta)$, so gilt $\langle \xi, \eta \rangle_\mathrm{HS} = \tr(y^*x)$. Definiere daher via $\|x\|_2 \coloneqq \tr(x^*x)^{1/2}$ eine Norm auf $\F(\Hc)$, genannt \emph{Hilbert-Schmidt-Norm}. 
+
+Für eine Darstellung $x=\sum_i \lambda_i t_{e_i,f_i}$, wobei $(e_i),(f_i)$ ONSe, ist die Hilbert-Schmidt-Norm gegeben durch $\|x\|_\mathrm{HS} = \|(\lambda_i)\|_{l^2(I)}$. Daraus folgt auch, dass $\|x\|_2 \geq \|x\|_\mathrm{op}$: Es gilt $x^*x=\sum_i |\lambda_i|^2 t_{e_i,e_i}$. Sei $k$ so gewählt, dass $|\lambda_k|^2$ der größte Eigenwert von $x^*x$ ist. Dann folgt mit C*-Eigenschaft: $\|x\|^2=\|x^*x\| = |\lambda_k|^2 \leq \sum_i |\lambda_i|^2 = \|x\|_2^2$.
+
+Nun können wir die \emph{Hilbert-Schmidt-Operatoren} definieren. Sei $\beta_\mathrm{HS}$ die stetige Fortsetzung von $\beta$ auf $\Hc^*\otimes_\mathrm{HS} \Hc$. Dann sind die Hilbert-Schmidt-Operatoren gegeben durch $HS(\Hc) \coloneqq \beta(\Hc^*\otimes_\mathrm{HS}\Hc) \subset K(\Hc)$. 
 
 \end{document}
