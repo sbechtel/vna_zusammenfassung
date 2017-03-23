@@ -39,6 +39,7 @@
 \newcommand{\Nc}{\mathcal{N}}
 \newcommand{\Rc}{\mathcal{R}}
 \newcommand{\F}{\mathcal{F}}
+\newcommand{\T}{\mathcal{T}}
 \newcommand{\norm}[1]{\|#1\|}
 \newcommand{\laplace}{\triangle}
 \newcommand{\circum}{\text{\textasciicircum}}
@@ -186,14 +187,54 @@ Daraus folgt auch die sogenannte \emph{Hilbert-Schmidt-Darstellung} eines Tensor
 
 \subsection{kompakte Operatoren}
 
-Für $x\in \Hc\odot \Kc$ gilt $\|x\|_\varepsilon = \|\beta(x)\|_\mathrm{op}$. Somit folgt $\Hc \otimes_\varepsilon \Hc \cong K(\Hc)$.
+Für $\xi\in \Hc\odot \Kc$ gilt $\|\xi\|_\varepsilon = \|\beta(\xi)\|_\mathrm{op}$. Somit folgt $\Hc \otimes_\varepsilon \Hc \cong K(\Hc)$.
 
 \subsection{Hilbert-Schmidt-Operatoren}
 
 Sind $\xi,\eta\in \Hc^*\odot \Hc$ und seien $x\coloneqq \beta(\xi), y\coloneqq \beta(\eta)$, so gilt $\langle \xi, \eta \rangle_\mathrm{HS} = \tr(y^*x)$. Definiere daher via $\|x\|_2 \coloneqq \tr(x^*x)^{1/2}$ eine Norm auf $\F(\Hc)$, genannt \emph{Hilbert-Schmidt-Norm}. 
 
-Für eine Darstellung $x=\sum_i \lambda_i t_{e_i,f_i}$, wobei $(e_i),(f_i)$ ONSe, ist die Hilbert-Schmidt-Norm gegeben durch $\|x\|_\mathrm{HS} = \|(\lambda_i)\|_{l^2(I)}$. Daraus folgt auch, dass $\|x\|_2 \geq \|x\|_\mathrm{op}$: Es gilt $x^*x=\sum_i |\lambda_i|^2 t_{e_i,e_i}$. Sei $k$ so gewählt, dass $|\lambda_k|^2$ der größte Eigenwert von $x^*x$ ist. Dann folgt mit C*-Eigenschaft: $\|x\|^2=\|x^*x\| = |\lambda_k|^2 \leq \sum_i |\lambda_i|^2 = \|x\|_2^2$.
+Für eine Darstellung $x=\sum_i \lambda_i t_{e_i,f_i}$, wobei $(e_i),(f_i)$ ONSe, ist die Hilbert-Schmidt-Norm gegeben durch $\|x\|_2 = \left(\sum_i |\lambda_i|^2\right)^{1/2}$. Daraus folgt auch, dass $\|\beta(\xi)\|_\mathrm{op}\leq \|\beta(\xi)\|_2=\|\xi\|_\mathrm{HS}$: Es gilt $x^*x=\sum_i |\lambda_i|^2 t_{e_i,e_i}$. Sei $k$ so gewählt, dass $\lambda_k$ maximaler Eigenwert von $x^*x$ ist. Dann folgt mit C*-Eigenschaft: $\|x\|_\mathrm{op}^2=\|x^*x\|_\mathrm{op} = |\lambda_k|^2 \leq \sum_i |\lambda_i|^2 = \|x\|_2^2$.
 
-Nun können wir die \emph{Hilbert-Schmidt-Operatoren} definieren. Sei $\beta_\mathrm{HS}$ die stetige Fortsetzung von $\beta$ auf $\Hc^*\otimes_\mathrm{HS} \Hc$. Dann sind die Hilbert-Schmidt-Operatoren gegeben durch $HS(\Hc) \coloneqq \beta(\Hc^*\otimes_\mathrm{HS}\Hc) \subset K(\Hc)$. 
+Nun können wir die \emph{Hilbert-Schmidt-Operatoren} definieren. Sei $\beta: \Hc^*\otimes_\mathrm{HS} \Hc \to (K(H), \|\cdot\|_\mathrm{op})$ die stetige Fortsetzung von $\beta$. Dann sind die Hilbert-Schmidt-Operatoren gegeben durch $\mathrm{HS}(\Hc) \coloneqq \beta(\Hc^*\otimes_\mathrm{HS}\Hc) \subset K(\Hc)$. 
+
+Es ist $x\in \mathrm{HS}(\Hc)$ genau dann, wenn $\tr(x^*x)<\infty$ (vgl. $l^2$!) und dann gibt es eine Darstellung $x=\sum_i \lambda_i \mathrm{t}_{e_i,f_i}$ mit $\lambda_i > 0$, $\sum_i |\lambda_i|^2 < \infty$ und $(e_i)_i, (f_i)_i$ ONSe.
+
+Beispiel: Sei $K\in L^2(\Omega\times \Omega)$ Integralkern, dann ist $T_K: L^2(\Omega) \ni f \mapsto \int_\Omega K(\omega,\omega')f(\omega')\mathrm{d}\omega' \in L^2(\Omega)$ in $\mathrm{HS}(\Hc)$.
+
+\subsection{Spurklasseoperatoren}
+
+Für $\xi\in \Hc^*\odot \Hc$ in Hilbert-Schmidt-Darstellung $\xi=\sum_{i=i}^n \lambda_i e_i\otimes f_i$ gilt $\|\xi\|_\pi = \sum_{i=1}^n \lambda_i$ (also entspricht  die $\pi$-Norm der $l^1$-Norm!) und es lässt sich damit $\|\xi\|_\pi = \tr(|x|)$ zeigen (sieht ebenfalls aus wie $l^1$-Norm). Also ist $x\mapsto \tr(|x|)$ Norm auf $\F(\Hc)$.
+
+Da $\|\beta(\xi)\|_\mathrm{op} = \|\xi\|_\varepsilon \leq \|\xi\|_\pi$, gibt es stetige Fortsetzung $\beta: \Hc^*\otimes_\pi \Hc \to (K(\Hc),\|\cdot\|_\mathrm{op})$ und wir definieren die \emph{Spurklasseoperatoren} via $\T(\Hc)\coloneqq \beta(\Hc^*\otimes_\pi \Hc)$.
+
+Es ist $x\in \T(\Hc)$ genau dann, wenn $\tr(|x|)<\infty$ und in diesem Fall gibt es eine Darstellung $x=\sum_i \lambda_i t_{e_i,f_i}$ wobei $\lambda_i > 0$, $(\lambda_i)_{i\in I}\in l^1(I)$ und $(e_i)_i, (f_i)_i$ ONSe.
+
+Es ist $\T(\Hc)\subset \B(\Hc)$ ein zweiseitiges *-Ideal (gleich wichtig für die Dualitätstheorie!).  
+
+\subsection{Dualitätstheorie}
+
+Wir haben gesehen, dass es eine Analogie zwischen Folgenräumen und Operatorenräumen gibt, und zwar entsprechen die endlichen Folgen $c_{00}$ den Operatoren endlichen Ranges $\F(\Hc)$, die Nullfolgen $c_0$ entsprechen den kompakten Operatoren $K(\Hc)$, die summierbaren Folgen $l^1$ den Spurklasseoperatoren $\T(\Hc)$, die quadratintegrierbaren Folgen $l^2$ den Hilbert-Schmidt-Operatoren $\mathrm{HS}(\Hc)$ und die beschränkten Folgen $l^\infty$ den beschränkten Operatoren $\B(\Hc)$.
+
+Die Folgenräume $c_0$, $l^1$ und $l^\infty$ bilden eine Dualitätskette. Diese überträgt sich auf die Operatorklassen, es sind also die Spurklasseoperatoren der Dual von den kompakten Operatoren und die beschränkten Operatoren der Dual der Spurklasseoperatoren.
+
+\subsubsection{Der Dual von $K(\Hc)$}
+
+Für $\Phi\in \T(\Hc)$ und $x\in K(\Hc)$ gilt $\Phi x\in \T(\Hc)$ (Ideal), also ist $K(\Hc) \ni x\mapsto \tr(\Phi x)$ wohldefiniert und stetig. Ist umgekehrt $\varphi\in K(\Hc)^*$, so gibt es $\Phi\in \T(\Hc)$ mit $\varphi(x)=\tr(\Phi x)$. Idee: Betrachte $\varphi|_\mathrm{HS}$. Nach Riesz-Frechet gibt es $\Phi\in \mathrm{HS}(\Hc)$ mit $\varphi(x)=\langle x, \Phi \rangle_\mathrm{HS} = \tr(\Phi^* x)$. Zeige dann: $\Phi^* \in \T(\Hc)$.
+
+Die Zuordnung ist isometrisch, also $K(\Hc)^*\cong \T(\Hc)$.
+
+Außerdem lässt sich $\varphi$ schreiben als $\varphi(x)=\sum_i \lambda_i \langle x f_i, e_i \rangle$ mit $\lambda_i > 0$, $\sum_i \lambda_i < \infty$ und $(e_i),(f_i)$ ONSe.
+
+\subsubsection{Der Dual von $\T(\Hc)$}
+
+Wie oben ist für $x\in \B(\Hc)$ ein stetiges Funktional gegeben durch $\T(\Hc) \ni \Phi \mapsto \tr(\Phi x)$ (wohldefiniert wie oben und Konvergenz in $\|\cdot\|_1$ impliziert insbesondere Konvergenz in $\|\cdot\|_\mathrm{op}$). Umgekehrt gibt es zu $\varphi\in \T(\Hc)^*$ ein $x\in \B(\Hc)$ mit $\varphi(\Phi)=\tr(\Phi x)$. Beweisidee: Ziehe Funktional auf $\Hc^*\otimes_\pi \Hc$ zurück, diese liefert eine beschränkte Bilinearform auf $\Hc^* \times \Hc$, welche wiederum einer Sesquilinearform auf $\Hc\times \Hc$ entspricht. Diese wird durch einen beschränkten Operator eindeutig dargestellt.
+
+Die Zuordnung ist wieder eindeutig und isometrisch, also $\T(\Hc)^*\cong \B(\Hc)$.
+
+\subsection{normale Linearformen}
+
+Ein Funktional $\varphi: \B(\Hc)\to \C$ heißt \emph{normal}, falls es schwach-*-stetig ist, also: Ist $x_i$ Netz in $\B(\Hc)$ mit $\tr((x_i-x)\Phi)\to 0$ für ein $x\in \B(\Hc)$ und alle $\Phi\in \T(\Hc)$, so folgt $\varphi(x_i)\to\varphi(x)$.
+
+Dies ist genau dann der Fall, wenn es $\Phi\in \T(\Hc)$ gibt mit $\varphi(x)=\tr(\Phi x)$.
 
 \end{document}
