@@ -117,7 +117,7 @@ Erhalte Einbettung $E_1\otimes \dots \otimes E_n \hookrightarrow \Mult(E_1^*\tim
 
 \subsubsection{Operatoren endlichen Ranges als Tensorprodukt}
 
-Für $e\in E, f\in F$ definiere $t_{e,f}: E^*\ni e' \mapsto \langle e, e' \rangle f$, also $t_{e,f}\in \Lin(E^*,F)$. Es ist $E\times F \ni (e,f) \mapsto t_{e,f}$ bilinear, also gibt es $\beta: E\otimes F \to \Lin(E^*,F)$ mit $\beta(e\otimes f) = t_{e,f}$, welches injektiv ist, also $E\otimes F \hookrightarrow \Lin(E^*,F)$.
+Für $e\in E, f\in F$ definiere $\mathrm{t}_{e,f}: E^*\ni e' \mapsto \langle e, e' \rangle f$, also $\mathrm{t}_{e,f}\in \Lin(E^*,F)$. Es ist $E\times F \ni (e,f) \mapsto \mathrm{t}_{e,f}$ bilinear, also gibt es $\beta: E\otimes F \to \Lin(E^*,F)$ mit $\beta(e\otimes f) = \mathrm{t}_{e,f}$, welches injektiv ist, also $E\otimes F \hookrightarrow \Lin(E^*,F)$.
 
 Ist $E\neq E^{**}$, so ist $\beta$ sicher nicht surjektiv!
 
@@ -127,7 +127,7 @@ Betrachte nun $\beta: E^*\otimes F \to \F(E^{**},F)$. Diese ist nach wie vor inj
 
 \subsubsection{Beispiel: Matrizen als TP und ihre Spur}
 
-Betrachte $(\K^n)^* \otimes \K^m$. Es ist $t_{e_j',e_i}=e_{ij}$, also $m\times n$ Matrizen sind Tensorprodukt. Ist $A$ eine $m\times n$-Matrix mit Zeilen $a_1,\dots,a_m \in (\K^n)^*$, so ist $A=\sum_{j=1}^m a_j \otimes e_j$, analog: sind $b_1,\dots,b_n \in \K^m$ die Spalten von $A$, so gilt $A=\sum_{i=1}^n e_i \otimes b_i$. Definiere $(\K^n)^* \times \K^n \ni (x',y)\mapsto \langle y, x' \rangle$ bilinear, diese besitzt Fortsetzung $\tau: (\K^n)^*\otimes \K^n = M_n \to \K$ mit $\tau(A)=\Spur(A)$. Nutze dies später, um den Begriff der Spur zu verallgemeinern!
+Betrachte $(\K^n)^* \otimes \K^m$. Es ist $\mathrm{t}_{e_j',e_i}=e_{ij}$, also $m\times n$ Matrizen sind Tensorprodukt. Ist $A$ eine $m\times n$-Matrix mit Zeilen $a_1,\dots,a_m \in (\K^n)^*$, so ist $A=\sum_{j=1}^m a_j \otimes e_j$, analog: sind $b_1,\dots,b_n \in \K^m$ die Spalten von $A$, so gilt $A=\sum_{i=1}^n e_i \otimes b_i$. Definiere $(\K^n)^* \times \K^n \ni (x',y)\mapsto \langle y, x' \rangle$ bilinear, diese besitzt Fortsetzung $\tau: (\K^n)^*\otimes \K^n = M_n \to \K$ mit $\tau(A)=\Spur(A)$. Nutze dies später, um den Begriff der Spur zu verallgemeinern!
 
 \subsection{topologische Tensorprodukte}
 
@@ -173,15 +173,15 @@ Die Basisunabhängigkeit überträgt sich ebenso auf den Fall von Endlichrangope
 
 Es ist $M_n\times M_n \ni (x,y) \mapsto \tr(y^*x)$ ein Skalarprodukt auf $M_n$, aus Riesz-Frechet folgt, dass ein Funktional $\varphi$ auf $M_n$ durch eine Dichtematrix $\Phi$ via $\varphi(x)=\tr(\Phi x)$ dargestellt werden kann. Ist $\Phi \geq 0$ und $\tr(\Phi)=1$, so ist $\varphi$ ein Zustand. Dieser ist genau dann rein, wenn $\Phi$ eine eindimensionale orthogonale Projektion ist.
 
-Man rechnet leicht nach, dass $\tr(x t_{\xi,\eta})=\tr(t_{\xi,x\eta})=\langle x\eta, \xi \rangle$ gilt. Ist also $\Phi=t_{\xi,\xi}$ eindimensionale orthogonale Projektion und $x\in M_n$, so gilt $\varphi(x)=\tr(\Phi x)=\tr(x \Phi)=\langle x\xi, \xi \rangle$, also ist $\varphi$ Vektorzustand!
+Man rechnet leicht nach, dass $\tr(x \mathrm{t}_{\xi,\eta})=\tr(\mathrm{t}_{\xi,x\eta})=\langle x\eta, \xi \rangle$ gilt. Ist also $\Phi=\mathrm{t}_{\xi,\xi}$ eindimensionale orthogonale Projektion und $x\in M_n$, so gilt $\varphi(x)=\tr(\Phi x)=\tr(x \Phi)=\langle x\xi, \xi \rangle$, also ist $\varphi$ Vektorzustand!
 
 \section{Wichtige Operatorklassen und deren Konstruktion über Tensorprodukte}
 
-Wir hatten gesehen, dass $E^*\odot E \cong \F(E)$ gilt. Ist $E=\Hc$ ein Hilbertraum, so würden wir gerne statt $\odot$ auch $\otimes_{HS}$ bilden können (dies wird auf die Klasse der Hilbert-Schmidt-Operatoren führen). Allerdings ist $\Hc^*$ kein Hilbertraum, wenn man durch die Riesz-Frechet-Identifikation das Skalarprodukt von $\Hc$ zurückziehen will. Wir statten deshalb $\Hc^*$ mit einer neuen Skalarmultiplikation und einem geeigneten Skalarprodukt aus, um so $\Hc^*$ zu einem Hilbertraum zu machen, mit dem $\Hc^*\times \Hc \ni (\xi,\eta) \mapsto t_{\xi,\eta}$ bilinear ist.
+Wir hatten gesehen, dass $E^*\odot E \cong \F(E)$ gilt. Ist $E=\Hc$ ein Hilbertraum, so würden wir gerne statt $\odot$ auch $\otimes_{HS}$ bilden können (dies wird auf die Klasse der Hilbert-Schmidt-Operatoren führen). Allerdings ist $\Hc^*$ kein Hilbertraum, wenn man durch die Riesz-Frechet-Identifikation das Skalarprodukt von $\Hc$ zurückziehen will. Wir statten deshalb $\Hc^*$ mit einer neuen Skalarmultiplikation und einem geeigneten Skalarprodukt aus, um so $\Hc^*$ zu einem Hilbertraum zu machen, mit dem $\Hc^*\times \Hc \ni (\xi,\eta) \mapsto \mathrm{t}_{\xi,\eta}$ bilinear ist.
 
 \subsection{Operatoren endlichen Ranges}
 
-Ein Operator $x\in \B(\Hc,\Kc)$ ist genau dann ein Operator endlichen Ranges, $x\in \F(\Hc,\Kc)$, wenn es ONSe $\{e_1,\dots,e_n\}$ in $\Hc$, $\{f_1,\dots,f_n\}$ von $\Kc$ gibt mit $x=\sum_i \lambda_i t_{e_i,f_i}$. Nutze dazu die polare Zerlegung $x=v|x|$, dann ist $|x|$ ebenso Endlichrangoperator und kann nach dem Spektralsatz der linearen Algebra als $|x|=\sum_i \lambda_i t_{e_i,e_i}$ geschrieben werden. Dann erhält man die gewünschte Darstellung, wenn man das zweite ONS via $f_i\coloneqq ve_i$ definiert. Aus dieser Äquivalenz ist wegen $t_{\xi,\eta}^*=t_{\eta,\xi}$ auch klar, dass $x\in\F(\Hc,\Kc)$ genau dann, wenn $x^*\in\F(\Kc,\Hc)$.
+Ein Operator $x\in \B(\Hc,\Kc)$ ist genau dann ein Operator endlichen Ranges, $x\in \F(\Hc,\Kc)$, wenn es ONSe $\{e_1,\dots,e_n\}$ in $\Hc$, $\{f_1,\dots,f_n\}$ von $\Kc$ gibt mit $x=\sum_i \lambda_i \mathrm{t}_{e_i,f_i}$. Nutze dazu die polare Zerlegung $x=v|x|$, dann ist $|x|$ ebenso Endlichrangoperator und kann nach dem Spektralsatz der linearen Algebra als $|x|=\sum_i \lambda_i \mathrm{t}_{e_i,e_i}$ geschrieben werden. Dann erhält man die gewünschte Darstellung, wenn man das zweite ONS via $f_i\coloneqq ve_i$ definiert. Aus dieser Äquivalenz ist wegen $\mathrm{t}_{\xi,\eta}^*=\mathrm{t}_{\eta,\xi}$ auch klar, dass $x\in\F(\Hc,\Kc)$ genau dann, wenn $x^*\in\F(\Kc,\Hc)$.
 
 Daraus folgt auch die sogenannte \emph{Hilbert-Schmidt-Darstellung} eines Tensors: Ist $x=\sum_i \xi_i\otimes \eta_i \in \Hc\odot \Kc$, so gibt es ONSe $\{e_1,\dots,e_n\}$ von $\Hc$, $\{f_1,\dots,f_n\}$ von $\Kc$ sowie $\lambda_1,\dots,\lambda_n > 0$ mit $x=\sum_i \lambda_i e_i\otimes f_i$.
 
@@ -193,7 +193,7 @@ Für $\xi\in \Hc\odot \Kc$ gilt $\|\xi\|_\varepsilon = \|\beta(\xi)\|_\mathrm{op
 
 Sind $\xi,\eta\in \Hc^*\odot \Hc$ und seien $x\coloneqq \beta(\xi), y\coloneqq \beta(\eta)$, so gilt $\langle \xi, \eta \rangle_\mathrm{HS} = \tr(y^*x)$. Definiere daher via $\|x\|_2 \coloneqq \tr(x^*x)^{1/2}$ eine Norm auf $\F(\Hc)$, genannt \emph{Hilbert-Schmidt-Norm}. 
 
-Für eine Darstellung $x=\sum_i \lambda_i t_{e_i,f_i}$, wobei $(e_i),(f_i)$ ONSe, ist die Hilbert-Schmidt-Norm gegeben durch $\|x\|_2 = \left(\sum_i |\lambda_i|^2\right)^{1/2}$. Daraus folgt auch, dass $\|\beta(\xi)\|_\mathrm{op}\leq \|\beta(\xi)\|_2=\|\xi\|_\mathrm{HS}$: Es gilt $x^*x=\sum_i |\lambda_i|^2 t_{e_i,e_i}$. Sei $k$ so gewählt, dass $\lambda_k$ maximaler Eigenwert von $x^*x$ ist. Dann folgt mit C*-Eigenschaft: $\|x\|_\mathrm{op}^2=\|x^*x\|_\mathrm{op} = |\lambda_k|^2 \leq \sum_i |\lambda_i|^2 = \|x\|_2^2$.
+Für eine Darstellung $x=\sum_i \lambda_i \mathrm{t}_{e_i,f_i}$, wobei $(e_i),(f_i)$ ONSe, ist die Hilbert-Schmidt-Norm gegeben durch $\|x\|_2 = \left(\sum_i |\lambda_i|^2\right)^{1/2}$. Daraus folgt auch, dass $\|\beta(\xi)\|_\mathrm{op}\leq \|\beta(\xi)\|_2=\|\xi\|_\mathrm{HS}$: Es gilt $x^*x=\sum_i |\lambda_i|^2 \mathrm{t}_{e_i,e_i}$. Sei $k$ so gewählt, dass $\lambda_k$ maximaler Eigenwert von $x^*x$ ist. Dann folgt mit C*-Eigenschaft: $\|x\|_\mathrm{op}^2=\|x^*x\|_\mathrm{op} = |\lambda_k|^2 \leq \sum_i |\lambda_i|^2 = \|x\|_2^2$.
 
 Nun können wir die \emph{Hilbert-Schmidt-Operatoren} definieren. Sei $\beta: \Hc^*\otimes_\mathrm{HS} \Hc \to (K(H), \|\cdot\|_\mathrm{op})$ die stetige Fortsetzung von $\beta$. Dann sind die Hilbert-Schmidt-Operatoren gegeben durch $\mathrm{HS}(\Hc) \coloneqq \beta(\Hc^*\otimes_\mathrm{HS}\Hc) \subset K(\Hc)$. 
 
@@ -207,7 +207,7 @@ Für $\xi\in \Hc^*\odot \Hc$ in Hilbert-Schmidt-Darstellung $\xi=\sum_{i=i}^n \l
 
 Da $\|\beta(\xi)\|_\mathrm{op} = \|\xi\|_\varepsilon \leq \|\xi\|_\pi$, gibt es stetige Fortsetzung $\beta: \Hc^*\otimes_\pi \Hc \to (K(\Hc),\|\cdot\|_\mathrm{op})$ und wir definieren die \emph{Spurklasseoperatoren} via $\T(\Hc)\coloneqq \beta(\Hc^*\otimes_\pi \Hc)$.
 
-Es ist $x\in \T(\Hc)$ genau dann, wenn $\tr(|x|)<\infty$ und in diesem Fall gibt es eine Darstellung $x=\sum_i \lambda_i t_{e_i,f_i}$ wobei $\lambda_i > 0$, $(\lambda_i)_{i\in I}\in l^1(I)$ und $(e_i)_i, (f_i)_i$ ONSe.
+Es ist $x\in \T(\Hc)$ genau dann, wenn $\tr(|x|)<\infty$ und in diesem Fall gibt es eine Darstellung $x=\sum_i \lambda_i \mathrm{t}_{e_i,f_i}$ wobei $\lambda_i > 0$, $(\lambda_i)_{i\in I}\in l^1(I)$ und $(e_i)_i, (f_i)_i$ ONSe.
 
 Es ist $\T(\Hc)\subset \B(\Hc)$ ein zweiseitiges *-Ideal (gleich wichtig für die Dualitätstheorie!).  
 
