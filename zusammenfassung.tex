@@ -237,4 +237,36 @@ Ein Funktional $\varphi: \B(\Hc)\to \C$ heißt \emph{normal}, falls es schwach-*
 
 Dies ist genau dann der Fall, wenn es $\Phi\in \T(\Hc)$ gibt mit $\varphi(x)=\tr(\Phi x)$.
 
+\section{Topologien auf $\B(\Hc)$}
+
+Bisher kennen wir die Normtopologie, starke Operatortopologie ($\mathrm{stop}$) und schwache Operatortopologie ($\mathrm{swop}$) auf $\B(\Hc)$. Im Folgenden werden wir weitere Topologien kennenlernen und zeigen, dass diese in gewissen Fällen übereinstimmen bzw. deren Dualräume übereinstimmen.
+
+\subsection{$\mathrm{swop}=\sigma(\B(\Hc),\F(\Hc))$}
+
+Sei $x_i$ in $\B(\Hc)$. Gilt $\mathrm{swop}-\lim_i x_i = 0$, so auch $|\tr(\sum_{j=1}^n \mathrm{t}_{\xi_j, \eta_j} x_i)|\leq \sum_{j=1}^n |\langle x_i \eta_j, \xi_j \rangle| \to 0$. Umgekehrt zeigt $\tr(\mathrm{t}_{\eta,\xi}x)=\langle x\xi, \eta \rangle$ die $\mathrm{swop}$-Konvergenz.
+
+\subsection{$\mathrm{stop}$-stetige Funktionale sind $\mathrm{swop}$-stetig}
+
+Für $\varphi\in \B(\Hc)^*$ sind $\mathrm{stop}$- und $\mathrm{swop}$-Stetigkeit äquivalent und es gibt eine Darstellung $\varphi(x)=\tr(\Phi x)$ für $\Phi\in \F(\Hc)$, also $(\B(\Hc),\mathrm{stop})^*=\F(\Hc)=(\B(\Hc),\mathrm{swop})^*$.
+
+Das aus $\mathrm{swop}$-Stetigkeit auch $\mathrm{stop}$-Stetigkeit folgt, sowie Funktionale dieser Form $\mathrm{swop}$-stetig sind, ist klar. Wir zeigen, dass ein $\mathrm{stop}$-stetiges Funktional eine solche Darstellung besitzt. Dazu nutzen wir einen Amplifikationstrick!
+
+Aus der $\mathrm{stop}$-Stetigkeit von $\varphi$ folgt, dass $\varphi$ durch endlich viele $\mathrm{stop}$-Halbnormen dominiert wird, also $|\varphi(x)|\leq \left(\sum_{i=1}^n \|x\xi_i\|\right)^{1/2}$. Zu $\hat\Hc\coloneqq \oplus_{i=1}^n \Hc$ betrachten wir den Teilraum $\tilde\Hc \coloneqq \{ \tilde x\tilde \xi = x\xi_1\oplus \dots \oplus x\xi_n: x\in \B(\Hc) \}$. Es gilt wegen oben $|\varphi(x)|\leq \|\tilde x\tilde \xi\|$ und daraus folgt außerdem die Wohldefiniertheit von $\tilde x\tilde \xi \mapsto \varphi(x)$. Also ist $\varphi: \tilde \Hc \to \C$ ein stetiges Funktional, nach Riesz-Frechet gibt es $\tilde \eta$ mit $\varphi(x)=\langle \tilde x\tilde \xi, \tilde \eta \rangle = \sum_{i=1}^n \langle x \xi_i, \eta_i \rangle$.
+
+\subsection{$\sigma-\mathrm{swop}$-Topolgie und $\sigma-\mathrm{stop}$-Topologie}
+
+Sind $(\xi_i)_{i=1,\dots,n},(\eta_i)_{i=1,\dots,n}$ endliche Folgen in $\Hc$, so definiert die Familie der Halbnormen $x\mapsto |\sum_{i=1}^n \langle x\xi_i, \eta_i \rangle|$ die $\mathrm{stop}$-Topologie auf $\B(\Hc)$. Ersetzen wir die endlichen Folgen durch Folgen $(\xi_n),(\eta_n)$ mit $\sum_n \|\xi_n\|^2 < \infty, \sum_n \|\eta_n\|^2 < \infty$, erhalten wir die $\sigma-\mathrm{swop}$-Topologie, welche offensichtlich feiner als die $\mathrm{stop}$-Topologie ist.
+
+Die $\sigma-\mathrm{swop}$-Topologie stimmt mit $\sigma(\B(\Hc),\T(\Hc)$ überein, wird also von den normalen Linearformen induziert (es reichen sogar die normalen Zustände, da normale Linearformen positive Linearkombination von normalen Zuständen sind).
+
+Ebenso definiert man die $\sigma-\mathrm{stop}$ Halbnormen über eine Folge $(\xi_n)$ mit $\sum_n \|\xi\|^2 < \infty$ und diese Topologie wir auch durch die Halbnormen $x\mapsto \varphi(x^*x)^{1/2}$ erzeugt, wobei $\varphi$ normaler Zustand.
+
+Für die Dualräume gilt $(\B(\Hc),\sigma-\mathrm{stop})^*=\T(\Hc)=(\B(\Hc),\sigma-\mathrm{swop})^*$, der Beweis geht wie im Fall von $\mathrm{stop}$- und $\mathrm{swop}$-Topologie mit Amplifikationstrick.
+
+\subsection{Vergleich der Topologien}
+
+Auf $\B(\Hc)_1$ stimmen $\mathrm{swop}$ und $\sigma-\mathrm{swop}$ überein: Die Einheitskugel ist $\sigma-\mathrm{swop}=\sigma^*$ kompakt (Banach-Alaoglu), $\mathrm{swop}$ ist Hausdorff und $\id: (\B(\Hc)_1, \sigma-\mathrm{swop})\to (\B(\Hc)_1,\mathrm{swop})$ ist stetig, also Homöomorphismus.
+
+Außerdem stimmen $\mathrm{stop}$ und $\sigma-\mathrm{stop}$ auf $\B(\Hc)$ überein, nutze dazu $\mathrm{stop}-\lim_i x_i = 0$ gdw. $\mathrm{swap}-\lim_i x^*x = 0$ (ebenso mit $\sigma$-Versionen).
+
 \end{document}
