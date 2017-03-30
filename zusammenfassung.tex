@@ -11,6 +11,7 @@
 \usepackage{enumerate}
 \usepackage{url}
 \usepackage{tikz}
+\usepackage{tikz-cd}
 \usepackage{esint}
 \usepackage{csquotes}
 \usepackage{textcomp}
@@ -135,7 +136,7 @@ Betrachte $(\K^n)^* \otimes \K^m$. Es ist $\mathrm{t}_{e_j',e_i}=e_{ij}$, also $
 
 Bezeichne mit $\odot$ das algebraische Tensorprodukt. Sind $\Hc,\Kc$ Hilberträume, so gibt es auf $\Hc\odot \Kc$ ein eindeutiges Skalarprodukt $\langle \cdot, \cdot \rangle_{HS}$ mit $\langle x\otimes y, x'\otimes y' \rangle_{HS} = \langle x,x' \rangle_\Hc \langle y, y' \rangle_\Kc$. Also ist $(\Hc\otimes \Kc, \langle \cdot, \cdot \rangle_{HS})$ Prähilbertraum. Dessen Vervollständigung heißt \emph{Hilbertraumtensorprodukt} von $\Hc$ und $\Kc$, schreibe $\Hc \otimes_{HS} \Kc$ bzw. $\Hc \otimes \Kc$. Die induzierte Norm $\|\cdot\|_{HS}$ ist eine \emph{Kreuznorn}, d.h. $\|x\otimes y\|_{HS}=\|x\|_\Hc \|y\|_\Kc$ (somit ist $B: \Hc \times \Kc \to W$ bilinear genau dann beschränkt, wenn es $T_B: \Hc \odot \Kc \to W$ ist, also erhalten wir eine topologische Version der universellen Eigenschaft für $\Hc \otimes \Kc$). Außerdem folgt aus $x_i \to x, y_j\to y$, dass $x_i \otimes y_j \to x\otimes y$ und sind $(e_i), (f_j)$ ONBs von $\Hc$ bzw. $\Kc$, so ist $\{ e_i \otimes f_j: i\in I, j\in J \}$ ONB von $\Hc\otimes \Kc$.
 
-Beispiele: 1) Es gilt $l^2(I)\otimes l^2(J) = l^2(I\times J)$ (Dimensionsvergleich!) 2) Sind $(\Omega_1, \Sigma_1,\mu_1), (\Omega_2,\Sigma_2,\mu_2)$ $\sigma$-endliche Maßräume, dann gilt $L^2(\Omega_1\times \Omega_2) \cong L^2(\Omega_1)\otimes L^2(\Omega_2)$ und der unitäre Operator ist eindeutig mit $U(f_1\otimes f_2) = f_1(\omega_1)f_2(\omega_2)$ (nutze topologische universelle Eigenschaft!)
+Beispiele: 1) Es gilt $\ell^2(I)\otimes \ell^2(J) = \ell^2(I\times J)$ (Dimensionsvergleich!) 2) Sind $(\Omega_1, \Sigma_1,\mu_1), (\Omega_2,\Sigma_2,\mu_2)$ $\sigma$-endliche Maßräume, dann gilt $L^2(\Omega_1\times \Omega_2) \cong L^2(\Omega_1)\otimes L^2(\Omega_2)$ und der unitäre Operator ist eindeutig mit $U(f_1\otimes f_2) = f_1(\omega_1)f_2(\omega_2)$ (nutze topologische universelle Eigenschaft!)
 
 Sind $A\in \B(\Hc), B\in \B(\Kc)$, denn gibt es eindeutigen Operator $A\otimes B\in \B(\Hc\otimes \Kc)$ mit $A\otimes B(x\otimes y)=Ax\otimes By$ und es gilt $\|A\otimes B\|=\|A\|\|B\|$. Eindeutigkeit folgt aus der Eindeutigkeit auf dem dichten algebraischen Tensorprodukt. Zeige $\|A\otimes B\|=\|A\|\|B\|$ auf $\Hc \odot \Kc$, dann stetige Fortsetzung. Nutze $A\otimes B=(A\otimes 1_\Kc)(1_\Hc\otimes B)$ (denn $((A\otimes 1_\Kc)(1_\Hc\otimes B))(x\otimes y)=A\otimes 1_\Kc(x\otimes By)=Ax\otimes By$) und $\|A\otimes 1_\Kc\| \leq \|A\|$. Außerdem gilt $(A\otimes B)^*=A^*\otimes B^*$.
 
@@ -197,7 +198,7 @@ Für eine Darstellung $x=\sum_i \lambda_i \mathrm{t}_{e_i,f_i}$, wobei $(e_i),(f
 
 Nun können wir die \emph{Hilbert-Schmidt-Operatoren} definieren. Sei $\beta: \Hc^*\otimes_\mathrm{HS} \Hc \to (K(H), \|\cdot\|_\mathrm{op})$ die stetige Fortsetzung von $\beta$. Dann sind die Hilbert-Schmidt-Operatoren gegeben durch $\mathrm{HS}(\Hc) \coloneqq \beta(\Hc^*\otimes_\mathrm{HS}\Hc) \subset K(\Hc)$. 
 
-Es ist $x\in \mathrm{HS}(\Hc)$ genau dann, wenn $\tr(x^*x)<\infty$ (vgl. $l^2$!) und dann gibt es eine Darstellung $x=\sum_i \lambda_i \mathrm{t}_{e_i,f_i}$ mit $\lambda_i > 0$, $\sum_i |\lambda_i|^2 < \infty$ und $(e_i)_i, (f_i)_i$ ONSe.
+Es ist $x\in \mathrm{HS}(\Hc)$ genau dann, wenn $\tr(x^*x)<\infty$ (vgl. $\ell^2$!) und dann gibt es eine Darstellung $x=\sum_i \lambda_i \mathrm{t}_{e_i,f_i}$ mit $\lambda_i > 0$, $\sum_i |\lambda_i|^2 < \infty$ und $(e_i)_i, (f_i)_i$ ONSe.
 
 Beispiel: Sei $K\in L^2(\Omega\times \Omega)$ Integralkern, dann ist $T_K: L^2(\Omega) \ni f \mapsto \int_\Omega K(\omega,\omega')f(\omega')\mathrm{d}\omega' \in L^2(\Omega)$ in $\mathrm{HS}(\Hc)$.
 
@@ -213,7 +214,7 @@ Es ist $\T(\Hc)\subset \B(\Hc)$ ein zweiseitiges *-Ideal (gleich wichtig für di
 
 \subsection{Dualitätstheorie}
 
-Wir haben gesehen, dass es eine Analogie zwischen Folgenräumen und Operatorenräumen gibt, und zwar entsprechen die endlichen Folgen $c_{00}$ den Operatoren endlichen Ranges $\F(\Hc)$, die Nullfolgen $c_0$ entsprechen den kompakten Operatoren $K(\Hc)$, die summierbaren Folgen $l^1$ den Spurklasseoperatoren $\T(\Hc)$, die quadratintegrierbaren Folgen $l^2$ den Hilbert-Schmidt-Operatoren $\mathrm{HS}(\Hc)$ und die beschränkten Folgen $l^\infty$ den beschränkten Operatoren $\B(\Hc)$.
+Wir haben gesehen, dass es eine Analogie zwischen Folgenräumen und Operatorenräumen gibt, und zwar entsprechen die endlichen Folgen $c_{00}$ den Operatoren endlichen Ranges $\F(\Hc)$, die Nullfolgen $c_0$ entsprechen den kompakten Operatoren $K(\Hc)$, die summierbaren Folgen $l^1$ den Spurklasseoperatoren $\T(\Hc)$, die quadratintegrierbaren Folgen $\ell^2$ den Hilbert-Schmidt-Operatoren $\mathrm{HS}(\Hc)$ und die beschränkten Folgen $l^\infty$ den beschränkten Operatoren $\B(\Hc)$.
 
 Die Folgenräume $c_0$, $l^1$ und $l^\infty$ bilden eine Dualitätskette. Diese überträgt sich auf die Operatorklassen, es sind also die Spurklasseoperatoren der Dual von den kompakten Operatoren und die beschränkten Operatoren der Dual der Spurklasseoperatoren.
 
@@ -267,6 +268,75 @@ Für die Dualräume gilt $(\B(\Hc),\sigma-\mathrm{stop})^*=\T(\Hc)=(\B(\Hc),\sig
 
 Auf $\B(\Hc)_1$ stimmen $\mathrm{swop}$ und $\sigma-\mathrm{swop}$ überein: Die Einheitskugel ist $\sigma-\mathrm{swop}=\sigma^*$ kompakt (Banach-Alaoglu), $\mathrm{swop}$ ist Hausdorff und $\id: (\B(\Hc)_1, \sigma-\mathrm{swop})\to (\B(\Hc)_1,\mathrm{swop})$ ist stetig, also Homöomorphismus.
 
-Außerdem stimmen $\mathrm{stop}$ und $\sigma-\mathrm{stop}$ auf $\B(\Hc)$ überein, nutze dazu $\mathrm{stop}-\lim_i x_i = 0$ gdw. $\mathrm{swap}-\lim_i x^*x = 0$ (ebenso mit $\sigma$-Versionen).
+Außerdem stimmen $\mathrm{stop}$ und $\sigma-\mathrm{stop}$ auf $\B(\Hc)_1$ überein, nutze dazu $\mathrm{stop}-\lim_i x_i = 0$ gdw. $\mathrm{swap}-\lim_i x^*x = 0$ (ebenso mit $\sigma$-Versionen).
+
+\section{Eigenschaften von vNAen}
+
+\subsection{Bikommutantensatz}
+
+Sei $\M \subseteq \B(\Hc)$ Operatoralgebra mit $1_\Hc \in \M$. Dann sind für $x\in \B(\Hc)$ äquivalent: 1) $x\in \overline{\M}^\mathrm{swop}$ 2) $x\in \overline{\M}^\mathrm{stop}$ 3) $x\in \M''$. Beweis: Die Äquivalenz von 1) und 2) ist klar, da $\M$ konvex ist und beide Topologien die selben Duale erzeugen. Da $\M \subseteq \M''$ und $\M''$ automatisch $\mathrm{stop}$-abg. ist, folgt aus 2) auch 3). Für 3) nach 2) zeigt man zuerst für $x''\in \M''$ und $\xi\in \Hc$, dass man $x\in \M$ mit $\|(x-x'')\xi\| < \varepsilon$ findet. Durch Amplifikation zeigt man dann, dass auch der Schnitt mit einer Basis der lokalkonvexen Topologie nicht leer ist.
+
+Insbesondere folgt daraus: Eine Operatoralgebra $\M\subseteq \B(\Hc)$ mit $1_\Hc\in \M$ sind äquivalent: 1) $\M$ vNA 2) $\M$ ist $\mathrm{swop}$-abgeschlossen 3) $\M=\M''$.
+
+\subsection{Operatormatrizen und Amplifikation}
+
+Ist $\M$ Operatoralgebra mit $1_\Hc\in \M$, so ist $\vN(\M)\coloneqq \M''$ \emph{erzeugte vNA}. Ist $\Nc$ weitere Operatoralgebra, so ist $\vN(\M,\Nc)\coloneqq \vN(\M\cup\Nc)$.
+
+Sind $\M,\Nc$ vNAen, dann definiere $\M\odot\Nc\coloneqq \LH \{x\otimes y \in \B(\Hc\otimes \Kc): x\in \M, y\in \Nc \}$. Das \emph{von Neumann Tensorprodukt} ist dann $\M\otimes\Nc \coloneqq \vN(\M\odot \Nc)$.
+
+Für $\Kc = \ell^2(I)$ und $\Nc=1_\Kc\coloneqq \C 1_\Kc$ ist $\M\odot 1_\Kc = \{ x\otimes 1_\Kc \in \B(\oplus_i \Hc): x\in \M \}=\{ \left( \begin{smallmatrix} \ddots & & \\ & x & \\ & & \ddots \end{smallmatrix} \right) \}$. 
+
+Dies ist $\mathrm{stop}$-abgeschlossen, da $x\mapsto x\otimes 1_\Kc$ normaler Isomorphismus ist, also ist das von Neumann Tensorprodukt $\M\otimes 1_\Kc$ gegeben durch die Diagonalmatrizen mit konstanter Diagonale.
+
+Es gilt $(\M\otimes 1_\Kc)'=\mathrm{M}_I(\M')$. Außerdem gilt $\M\otimes \B(\Kc)=\mathrm{M}_I(\M)$, somit auch $(M\otimes 1_\Kc)=\M'\otimes \B(\Kc)$.
+
+\subsection{Spektraltheorie in vNAen}
+
+Ist $\M$ vNA mit $1_\Hc \in \M$ und $x\in \M$, so besitzt $x$ polare Zerlegung $x=v|x|$ mit $v,x,\mathrm{s}_l(x),\mathrm{s}_r(x)\in \M$ (nutze Bikommutantensatz). Aus $|x|=v^*x$ folgt dann, dass zweiseitige Ideale bereits *-Ideale sind ($x^*=|x|v^*$ und $|x|=v^*x$ im Ideal, da $x$ im Ideal).
+
+Außerdem liegen alle Spektralprojektionen eines $x=x^*\in \M$ wieder in $\M$ (denn $\chi_{(-\infty, \lambda]}(x)=\mathrm{s}((x-\lambda)_{-})$ liegt in $\M$, da $\mathrm{C}^*(1_\Hc, x) \subset \M$ und Träger enthalten sind), ebenso monotone Limiten (da diese $\mathrm{stop}$-konvergieren und $\M$ diesbezüglich abgeschlossen ist).
+
+\subsection{Einselement}
+
+Ist $\M$ vNA auf $\Hc$, so besitzt $\M$ ein Einselement $e$ ($\mathrm{stop}$-Limes einer approximativen Eins, die per Konstruktion monoton und beschränkt ist!). Ist $\M$ nicht degeneriert, also $[\M\Hc]=\Hc$, dann $e=1_\Hc$, sonst $\M=\M|_{[\M\Hc]}\oplus \C (1_\Hc-e)$.
+
+\subsection{Abgeschlossenheit einer vNA}
+
+Eine vNA $\M$ ist $\mathrm{stop}-,\mathrm{swop}-,\sigma-\mathrm{swop}-$ und $\sigma-\mathrm{stop}$-abgeschlossen: Die erste und letzte Implikation gilt, weil die Topologien die gleichen Duale erzeugen und $\M$ konvex ist, die mittlere, weil $\mathrm{swop}$ gröber als $\sigma-\mathrm{swop}$ ist.
+
+\subsection{Prädual einer vNA}
+
+Jede vNA $\M$ hat einen Prädual und dieser ist gegen durch $\T(\Hc)/\{\Phi\in \T(\Hc): \tr(\Phi x)|_\M = 0 \}$.
+
+\subsection{Stetigkeit von Funktionalen}
+
+Mit einem Resultat aus der FA kann man zeigen, dass $\varphi \in \M^*$ genau dann $\sigma-\mathrm{swop}$-stetig (also $\varphi\in \M_*$) ist, wenn $\varphi|_{\M_1}$ bzgl. $\mathrm{swop}$ stetig ist (es gilt die analoge Aussage mit $\mathrm{stop}$).
+
+\subsection{Dichtesatz von Kaplansky}
+
+Ist $\M$ vNA und $\A$ eine $\mathrm{stop}$- bzw. $\mathrm{swop}$-dichte Operatoralgebra, so gilt 1) $\A_\mathrm{h}$ ist $\mathrm{stop}$-dicht in $\M_\mathrm{h}$ 2) $\A_1^\mathrm{h}$ ist $\mathrm{stop}$-dicht in $\M_1^\mathrm{h}$ 3) $\A_1^+$ ist $\mathrm{stop}$-dicht in $\M_1^+$ 4) $\A_1$ ist $\mathrm{stop}$-dicht in $\M_1$.
+
+Beweis: TODO!!!
+
+Dieser Satz ist nützlich, da auf Schnitten mit der Einheitskugel z.B. $\mathrm{stop}$ und $\sigma-\mathrm{stop}$ übereinstimmen, es ist also Spiel mit den Topologien möglich!
+
+Anwendung: Operatoralgebra $\M$ ist vNA gdw. $\M$ bzgl. $\sigma-\mathrm{swop}$ abgeschlossen ist gdw. $\M_1$ bzgl. $\sigma-\mathrm{swop}$ kompakt ist! Die erste Implikation ist bekannt, die Zweite ist Banach-Alaoglu, die Dritte nutzt Kaplansky und das übereinstimmen von $\mathrm{stop}$ und $\sigma-\mathrm{swop}$ auf $\M_1$!
+
+\subsection{topologische Charakterisierung von vNAen}
+
+Eine Operatoralgebra $\M$ ist vNA gdw. $\M$ bzgl. $\sigma-\mathrm{swop}$ abgeschlossen ist gdw. $\M_1$ schwach-*-kompakt ist.
+
+Erste Implikation ist bekannt, $\M_1=\M\cap \B(\Hc)_1$ ist $\sigma-\mathrm{swop}$ abgeschlossen und damit kompakt (Banach-Alaoglu) und aus der Abgeschlossenheit folgt mit Kaplansky insbesondere, dass $\sigma-\mathrm{swop}$ Grenzwerte aus der Einheitskugel im $\mathrm{stop}$-Abschluss liegen, da auf der Einheitskugel die Topologien übereinstimmen.
+
+\subsection{Morphismen}
+
+Die "richtigen" Morphismen sind schwach-*-stetige *-Homomorphismen. Es gilt folgendes Stetigkeitsdiagramm:
+
+\begin{center}\begin{tikzcd}
+    \mathrm{stop} \arrow[r, Leftrightarrow] & \mathrm{swop} \arrow[d, Rightarrow]  \\
+    \sigma-\mathrm{stop} \arrow[r, Leftrightarrow]  & \sigma-\mathrm{swop},
+\end{tikzcd}\end{center}
+
+d.h. $\sigma-\mathrm{swop}$ ist der allgemeinste Stetigkeitsbegriff. Das Bild einer vNA unter einem stetigen *-Homomorphismus ist wieder eine vNA (nutze $\pi(\M_1)=\pi(\M)_1$ ist schwach-*-kompakt)!
 
 \end{document}
