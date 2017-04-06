@@ -41,8 +41,11 @@
 \newcommand{\Rc}{\mathcal{R}}
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\T}{\mathcal{T}}
-\newcommand{\norm}[1]{\|#1\|}
-\newcommand{\laplace}{\triangle}
+\newcommand{\Ifin}{\mathrm{I}_\mathrm{endl}}
+\newcommand{\Iinf}{\mathrm{I}_\infty}
+\newcommand{\IIfin}{\mathrm{II}_1}
+\newcommand{\IIinf}{\mathrm{II}_\infty}
+\newcommand{\III}{\mathrm{III}}
 \newcommand{\circum}{\text{\textasciicircum}}
 \renewcommand{\Re}{\mathrm{Re}\,}
 
@@ -90,11 +93,11 @@
 
 Eine *-Algebra $\M \subset \B(\Hc)$ heißt \emph{Operatoralgebra}. Ist $\M$ stop-abgeschlossen, so heißt $\M$ \emph{von Neumann Algebra (vNA)}. Durch GNS-Darstellung lässt sich jede C*-Algebra als Operatoralgebra darstellen. Sei $\Sc \subset \B(\Hc)$, da der Schnitt von vNAen wieder vNA ist, existiert kleinste vNA $\vN(\Sc)$, die $\Sc$ enthält. Ist $\Sc$ Operatoralgebra, so gilt $\vN(\Sc)=\overline{\Sc}^{stop}$, dies ist aber nicht offensichtlich, da Involution nicht stop-stetig ist!
 
-Für $\M \subset \B(\Hc)$ ist die \emph{Kommutante} gegeben durch $\M'\coloneqq \{ x\in\B(\Hc): xy=yx \text{ für all } y\in \M \}$. Es gilt immer $\M'$ stop-abgeschlossen und ist $\M$ Operatoralgebra, so auch $\M'$, somit $\M'$ vNA. Ferner gilt $1_\Hc\in \M'$ und $\M'=\M'''$ (wegen $\M\subset \M''$), also gilt für $\M$ Operatoralgebra auch nach Bikommutantensatz (vgl. später) $\M'$ vNA! Aus $\M \subset \M''$ folgt für $\M$ Operatoralgebra, dass $\vN(\M)\subset \M''$. Ist $1_\Hc\in M$, so folgt mit Bikommutantensatz $\M''\subset \vN(\M)''=\vN(\M)$, also $\M''=\vN(\M)$. Ist $\M$ nicht s.a., geht alles schief: Die Matrizen $\left(\begin{smallmatrix} 0 & a \\ 0 & 0 \end{smallmatrix}\right)$ haben als Kommutante $\left(\begin{smallmatrix} b & c \\ 0 & b \end{smallmatrix}\right)$, also ist jene nicht s.a., somit folgt wegen $\M'=\M'''$, dass Bikommutantenbildung keine Selbstadjungiertheit herbeiführt.
+Für $\M \subset \B(\Hc)$ ist die \emph{Kommutante} gegeben durch $\M'\coloneqq \{ x\in\B(\Hc): xy=yx \text{ für all } y\in \M \}$. Es gilt immer $\M'$ stop-abgeschlossen und ist $\M$ Operatoralgebra, so auch $\M'$, somit $\M'$ vNA\@. Ferner gilt $1_\Hc\in \M'$ und $\M'=\M'''$ (wegen $\M\subset \M''$), also gilt für $\M$ Operatoralgebra auch nach Bikommutantensatz (vgl.\ später) $\M'$ vNA\@! Aus $\M \subset \M''$ folgt für $\M$ Operatoralgebra, dass $\vN(\M)\subset \M''$. Ist $1_\Hc\in M$, so folgt mit Bikommutantensatz $\M''\subset \vN(\M)''=\vN(\M)$, also $\M''=\vN(\M)$. Ist $\M$ nicht s.a., geht alles schief: Die Matrizen $\left(\begin{smallmatrix} 0 & a \\ 0 & 0 \end{smallmatrix}\right)$ haben als Kommutante $\left(\begin{smallmatrix} b & c \\ 0 & b \end{smallmatrix}\right)$, also ist jene nicht s.a., somit folgt wegen $\M'=\M'''$, dass Bikommutantenbildung keine Selbstadjungiertheit herbeiführt.
 
 \subsection{Beispiel: $L^\infty$ ist vNA}
 
-Durch $L^\infty \ni g \mapsto M_g \in \B(L^2)$ wird $L^\infty$ als Operatoralgebra dargestellt, vgl. Borel-FK. Ist $(\Omega,\Sigma,\mu)$ lokalisierbar, so zerlege $L^2(\Omega)$ in direkte Summe $\oplus_i L^2(\Omega_i)$ mit $\mu(\Omega_i) < \infty$. Zeige dann für einen solchen Summanden, dass er seine eigene Kommutante ist, somit vNA: Sei $T\in L^\infty(\Omega)'$ und setze $f\coloneqq T(1)\in L^2(\Omega)$. Es gilt für $g\in L^\infty$ nun $T(g)=TM_g(1)=M_gT(1)=gf=M_f(g)$, also $T|_{L^\infty}=M_f|_{L^\infty}$, somit $M_f: L^\infty \subset L^2 \to L^2$ beschränkt. Wäre $f\not\in L^\infty$, würde es für $n\in \N$ messbare Mengen $\Omega_n \subset \Omega$ geben mit $|f(\omega)| \geq n$ f.ü. auf $\Omega_n$ und $g_n\coloneqq \chi_{\Omega_n}/\mu(\Omega_n)^{1/2}$ würde Beschränktheit auf $L^\infty$ widersprechen, also $f\in L^\infty$ und $M_f=T$ auf dichter Teilmenge, also $T\in L^\infty$.
+Durch $L^\infty \ni g \mapsto M_g \in \B(L^2)$ wird $L^\infty$ als Operatoralgebra dargestellt, vgl. Borel-FK\@. Ist $(\Omega,\Sigma,\mu)$ lokalisierbar, so zerlege $L^2(\Omega)$ in direkte Summe $\oplus_i L^2(\Omega_i)$ mit $\mu(\Omega_i) < \infty$. Zeige dann für einen solchen Summanden, dass er seine eigene Kommutante ist, somit vNA: Sei $T\in L^\infty(\Omega)'$ und setze $f\coloneqq T(1)\in L^2(\Omega)$. Es gilt für $g\in L^\infty$ nun $T(g)=TM_g(1)=M_gT(1)=gf=M_f(g)$, also $T|_{L^\infty}=M_f|_{L^\infty}$, somit $M_f: L^\infty \subset L^2 \to L^2$ beschränkt. Wäre $f\not\in L^\infty$, würde es für $n\in \N$ messbare Mengen $\Omega_n \subset \Omega$ geben mit $|f(\omega)| \geq n$ f.ü. auf $\Omega_n$ und $g_n\coloneqq \chi_{\Omega_n}/\mu(\Omega_n)^{1/2}$ würde Beschränktheit auf $L^\infty$ widersprechen, also $f\in L^\infty$ und $M_f=T$ auf dichter Teilmenge, also $T\in L^\infty$.
 
 \section{Tensorprodukte}
 
@@ -102,7 +105,7 @@ Durch $L^\infty \ni g \mapsto M_g \in \B(L^2)$ wird $L^\infty$ als Operatoralgeb
 
 Seien $E,F$ Vektorräume, $E^*,F^*$ ihre algebraischen Duale. Bezeichne mit $\Bil(E^*,F^*)$ die bilinearen Funktionale auf $E^*\times F^*$. Für $e\in E, f\in F$ definiere $e\otimes f\in \Bil(E^*, F^*)$ via $e\otimes f(e',f')\coloneqq e'(e)f'(f)$. Es heißt $e\otimes f$ \emph{elementarer Tensor} und $E\otimes F\coloneqq \LH \{e\otimes f: e\in E, f\in F\}$ heißt das \emph{Tensorprodukt} von $E$ mit $F$. Die Zuordnung $i: E\times F \ni (e,f) \mapsto e\otimes f \in E\otimes F$ ist bilinear und aus $0\neq e\in E, 0\neq f\in F$ folgt $e\otimes f \neq 0$, jedoch ist $i$ nicht injektiv. Ist $(e_i)$ Basis von $E$, $(f_j)$ Basis von $F$, dann $\{e_i\otimes f_j: i\in I, j\in J\}$ Basis von $E\otimes F$. Für einen weiteren Vektorraum $W$ gilt die Isomorphie $\Bil(E\times F, W)\cong \Lin(E\otimes F, W)$.
 
-Darstellung eines Tensors ist nicht eindeutig, aber für eine minimale Darstellung (d.h. Anzahl der Summanden ist minimal) $x=\sum_{i=1}^n e_i\otimes f_i$ gilt $\{e_1,\dots,e_n\}$ sowie $\{f_1,\dots,f_n\}$ l.u. (und umgekehrt, vgl. endlich-Rang Operatoren!) und ist $0=\sum_{i=1}^n e_i\otimes f_i$ und $\{e_1,\dots,e_n\}$ l.u., so folgt $f_i=0$ für alle $i$.
+Darstellung eines Tensors ist nicht eindeutig, aber für eine minimale Darstellung (d.h. Anzahl der Summanden ist minimal) $x=\sum_{i=1}^n e_i\otimes f_i$ gilt $\{e_1,\dots,e_n\}$ sowie $\{f_1,\dots,f_n\}$ l.u. (und umgekehrt, vgl.\ endlich-Rang Operatoren!) und ist $0=\sum_{i=1}^n e_i\otimes f_i$ und $\{e_1,\dots,e_n\}$ l.u., so folgt $f_i=0$ für alle $i$.
 
 \subsubsection{Tensorprodukt von linearen Abbildungen}
 
@@ -152,7 +155,7 @@ Wiederum auf $E\odot F$ definieren wir eine weiter Norm, genannt \emph{injektive
 
 Ein $p\in \B(\Hc)$ heißt \emph{Projektion}, falls $p^2=p$ gilt und \emph{orthogonale Projektion}, falls $p$ Projektion und $p^*=p$. Man nennt $v\in \B(\Hc)$ eine \emph{partielle Isometrie}, falls $v^*v$ eine orthogonale Projektion ist (automatisch s.a., Projektion ist zu prüfen). Ist $v$ partielle Isometrie so ist $\Nc(v)^\perp$ der Anfangsraum von $v$ und $\overline{\Rc(v)}$ der Zielraum von $v$. Es ist $v^*v$ orthogonale Projektion auf den Anfangsraum, genannt \emph{initiale Projektion}, und $vv^*$ ist orthogonale Projektion auf den Zielraum, genannt \emph{finale Projektion}. Zwischen Anfangsraum und Zielraum ist eine partielle Isometrie eine Isometrie.
 
-Für $x\in \B(\Hc)$ definieren wir Anfangsraum und Zielraum wie oben und bezeichnen die initiale Projektion als \emph{Rechtsträger} $s_r(x)$ und die finale Projektion als \emph{Linksträger} $s_l(x)$. Für $x$ s.a. definiere den Träger $s(x)\coloneqq s_l(x)=s_r(x)$ (wegen $\Nc(x)^\perp=\overline{\Rc(x^*)}=\overline{\Rc(x)}$). Es gilt (analog zu den partiellen Isometrien!) $s_l(x)=s(xx^*)$ und $s_r(x)=s(x^*x)$.
+Für $x\in \B(\Hc)$ definieren wir Anfangsraum und Zielraum wie oben und bezeichnen die initiale Projektion als \emph{Rechtsträger} $\mathrm{s}_r(x)$ und die finale Projektion als \emph{Linksträger} $\mathrm{s}_l(x)$. Für $x$ s.a.\ definiere den Träger $s(x)\coloneqq \mathrm{s}_l(x)=\mathrm{s}_r(x)$ (wegen $\Nc(x)^\perp=\overline{\Rc(x^*)}=\overline{\Rc(x)}$). Es gilt (analog zu den partiellen Isometrien!) $\mathrm{s}_l(x)=\mathrm{s}(xx^*)$ und $\mathrm{s}_r(x)=s(x^*x)$. Außerdem gilt $\mathrm{s}_r(x)=\mathrm{s}_r(|x|)$ (nutze $\ker(x)=\ker(x^*x)$).
 
 \subsubsection{polare Zerlegung}
 
@@ -240,7 +243,7 @@ Dies ist genau dann der Fall, wenn es $\Phi\in \T(\Hc)$ gibt mit $\varphi(x)=\tr
 
 \section{Topologien auf $\B(\Hc)$}
 
-Bisher kennen wir die Normtopologie, starke Operatortopologie ($\mathrm{stop}$) und schwache Operatortopologie ($\mathrm{swop}$) auf $\B(\Hc)$. Im Folgenden werden wir weitere Topologien kennenlernen und zeigen, dass diese in gewissen Fällen übereinstimmen bzw. deren Dualräume übereinstimmen.
+Bisher kennen wir die Normtopologie, starke Operatortopologie ($\mathrm{stop}$) und schwache Operatortopologie ($\mathrm{swop}$) auf $\B(\Hc)$. Im Folgenden werden wir weitere Topologien kennenlernen und zeigen, dass diese in gewissen Fällen übereinstimmen bzw.\ deren Dualräume übereinstimmen.
 
 \subsection{$\mathrm{swop}=\sigma(\B(\Hc),\F(\Hc))$}
 
@@ -274,9 +277,13 @@ Außerdem stimmen $\mathrm{stop}$ und $\sigma-\mathrm{stop}$ auf $\B(\Hc)_1$ üb
 
 \subsection{Bikommutantensatz}
 
-Sei $\M \subseteq \B(\Hc)$ Operatoralgebra mit $1_\Hc \in \M$. Dann sind für $x\in \B(\Hc)$ äquivalent: 1) $x\in \overline{\M}^\mathrm{swop}$ 2) $x\in \overline{\M}^\mathrm{stop}$ 3) $x\in \M''$. Beweis: Die Äquivalenz von 1) und 2) ist klar, da $\M$ konvex ist und beide Topologien die selben Duale erzeugen. Da $\M \subseteq \M''$ und $\M''$ automatisch $\mathrm{stop}$-abg. ist, folgt aus 2) auch 3). Für 3) nach 2) zeigt man zuerst für $x''\in \M''$ und $\xi\in \Hc$, dass man $x\in \M$ mit $\|(x-x'')\xi\| < \varepsilon$ findet. Durch Amplifikation zeigt man dann, dass auch der Schnitt mit einer Basis der lokalkonvexen Topologie nicht leer ist.
+Sei $\M \subseteq \B(\Hc)$ Operatoralgebra mit $1_\Hc \in \M$. Dann sind für $x\in \B(\Hc)$ äquivalent: 1) $x\in \overline{\M}^\mathrm{swop}$ 2) $x\in \overline{\M}^\mathrm{stop}$ 3) $x\in \M''$. Beweis: Die Äquivalenz von 1) und 2) ist klar, da $\M$ konvex ist und beide Topologien die selben Duale erzeugen. Da $\M \subseteq \M''$ und $\M''$ automatisch $\mathrm{stop}$-abg.\ ist, folgt aus 2) auch 3). Für 3) nach 2) zeigt man zuerst für $x''\in \M''$ und $\xi\in \Hc$, dass man $x\in \M$ mit $\|(x-x'')\xi\| < \varepsilon$ findet. Durch Amplifikation zeigt man dann, dass auch der Schnitt mit einer Basis der lokalkonvexen Topologie nicht leer ist.
 
 Insbesondere folgt daraus: Eine Operatoralgebra $\M\subseteq \B(\Hc)$ mit $1_\Hc\in \M$ sind äquivalent: 1) $\M$ vNA 2) $\M$ ist $\mathrm{swop}$-abgeschlossen 3) $\M=\M''$.
+
+Außerdem folgt $\overline{\A}^\mathrm{stop}=\overline{\A}^\mathrm{swop}=\A''$, also ist der $\mathrm{stop}$-Abschluss einer C*-Algebra eine vNA (obwohl apriori nicht mal klar ist, dass jener eine Algebra ist, da die Multiplikation auf $\B(\Hc)\times \B(\Hc)$ weder $\mathrm{stop}$-, noch $\mathrm{swop}$-stetig ist).
+
+Gegenbeispiele: 1) Ist $\M$ vNA, so auch auf einem größeren Hilbertraum, aber dann ist $1_\Hc$ nicht in $\M$, jedoch ist die Eins immer in der Kommutante, also $\M\neq\M''$ 2) Die Kommutante von $\{\left(\begin{smallmatrix} a & b \\ 0 & c \end{smallmatrix}\right)\}$ ist $\C$, also ist die Bikommutante $\mathrm{M}_2$.
 
 \subsection{Operatormatrizen und Amplifikation}
 
@@ -284,9 +291,7 @@ Ist $\M$ Operatoralgebra mit $1_\Hc\in \M$, so ist $\vN(\M)\coloneqq \M''$ \emph
 
 Sind $\M,\Nc$ vNAen, dann definiere $\M\odot\Nc\coloneqq \LH \{x\otimes y \in \B(\Hc\otimes \Kc): x\in \M, y\in \Nc \}$. Das \emph{von Neumann Tensorprodukt} ist dann $\M\otimes\Nc \coloneqq \vN(\M\odot \Nc)$.
 
-Für $\Kc = \ell^2(I)$ und $\Nc=1_\Kc\coloneqq \C 1_\Kc$ ist $\M\odot 1_\Kc = \{ x\otimes 1_\Kc \in \B(\oplus_i \Hc): x\in \M \}=\{ \left( \begin{smallmatrix} \ddots & & \\ & x & \\ & & \ddots \end{smallmatrix} \right) \}$. 
-
-Dies ist $\mathrm{stop}$-abgeschlossen, da $x\mapsto x\otimes 1_\Kc$ normaler Isomorphismus ist, also ist das von Neumann Tensorprodukt $\M\otimes 1_\Kc$ gegeben durch die Diagonalmatrizen mit konstanter Diagonale.
+Für $\Kc = \ell^2(I)$ und $\Nc=1_\Kc\coloneqq \C 1_\Kc$ ist $\M\odot 1_\Kc = \{ x\otimes 1_\Kc \in \B(\oplus_i \Hc): x\in \M \}=\{ \left( \begin{smallmatrix} \ddots & & \\ & x & \\ & & \ddots \end{smallmatrix} \right) \}$. Diese Algebra entspricht seiner Bikommutante, also $\M\otimes 1_\Kc = \M \odot 1_\Kc$.
 
 Es gilt $(\M\otimes 1_\Kc)'=\mathrm{M}_I(\M')$. Außerdem gilt $\M\otimes \B(\Kc)=\mathrm{M}_I(\M)$, somit auch $(M\otimes 1_\Kc)=\M'\otimes \B(\Kc)$.
 
@@ -338,5 +343,95 @@ Die "richtigen" Morphismen sind schwach-*-stetige *-Homomorphismen. Es gilt folg
 \end{tikzcd}\end{center}
 
 d.h. $\sigma-\mathrm{swop}$ ist der allgemeinste Stetigkeitsbegriff. Das Bild einer vNA unter einem stetigen *-Homomorphismus ist wieder eine vNA (nutze $\pi(\M_1)=\pi(\M)_1$ ist schwach-*-kompakt)!
+
+\section{Klassifikation von vNAen}
+
+Zur Klassifikation von vNAen werden wir versuchen die Faktoren (einfache Elemente in der Kategorie der vNAen!) zu verstehen und diese zu klassifizieren. Dabei wird die Untersuchung und der Vergleich von Projektionen eine zentrale Rolle einnehmen.
+
+\subsection{Faktoren}
+
+Ist $\M$ vNA, so heißt $\mathrm{Z}(\M)=\{x\in \M: xy=yx \text{ für all } y\in \M\}=\M\cap \M'$ das \emph{Zentrum} von $\M$. Man nennt $\M$ \emph{Faktor}, falls $\mathrm{Z}(\M)=\C$.
+
+Für $\mathfrak{m}\subset\M$ ist genau dann $\mathrm{swop}$-abg. Linksideal (resp. Rechtsideal), wenn es eine orthogonale Projektion $e\in \M$ gibt mit $\mathfrak{m}=\M e$ (resp. $\mathfrak{m}=e\M$) und dann ist $\mathfrak{m}$ genau dann zweiseitiges Ideal, wenn $e\in \mathrm{Z}(\M)$ (dann heißt $e$ \emph{zentrale Projektion}). Wir wissen dann außerdem bereits, dass $\mathfrak{m}$ als $\mathrm{swop}$-abgeschlossenes zweiseitiges Ideal sogar *-Ideal ist.
+
+Es folgt: $\M$ Faktor gdw. $\M$ keine nicht-trivialen $\mathrm{swop}$-abgeschlossene 2-seitige Ideale enthält. Daraus folgt, dass jeder normale Homomorphismus auf $\M$ treu ist, also $\M$ einfaches Objekt in der Kategorie der vNAen!
+
+Gilt $\mathrm{Z}(\M)\cong \ell^\infty(\{1,\dots,n\})$ (als vNAen!), so ist $\M$ direkte Summe von $n$ Faktoren ($\ell^\infty(\{1,\dots,n\})$ hat $n$ Extremalpunkte in der positiven Einheitskugel, diese werden zu $n$ orthogonalen Projektionen in $\mathrm{Z}(\M)$).
+
+Ein Vektor $\xi\in \Hc$ heißt \emph{separierend}, falls aus $x\xi=0$ bereits $x=0$ für alle $x\in \M$ folgt. Es ist $\xi$ separierend für $\M$ genau dann, wenn $\xi$ zyklisch für $\M'$ ist. Beispiel: 1) $\mathrm{M}_n$ hat keinen zyklischen Vektor für $n\geq 2$, denn $\C \cdot \xi \neq \C^n$, also nicht zyklisch für die Kommutante. 2) $\xi = \sum_{i=1}^n e_i\otimes e_i = e_1 \oplus \dots \oplus e_n$ ist zyklisch und separierend für $\mathrm{M}_n \otimes 1 \subset \B(\C^n\otimes \C^n) = \B(\oplus_{i=1}^n \C^n)$, also auch separierend und zyklisch für seine Kommutante $1\otimes \mathrm{M}_n$.
+
+\subsection{Gruppen-vNAen}
+
+Sei $G$ Gruppe, dann definiert $G\ni g\mapsto L_g \coloneqq (\ell^2(G)\ni f\mapsto \delta_g\ast f)$ eine unitäre Gruppendarstellung auf $\ell^2(G)$. Dabei ist $L_g$ die \emph{linksreguläre Darstellung}. Definiere die Algebra $\mathrm{A}(G)\coloneqq \LH \{ L_g: g\in G\}$. Der Vektor $\delta_e$ ist zyklisch für $\mathrm{A}(G)$, außerdem gibt es noch eine rechtsreguläre Darstellung $R_g$ mit $\{R_g: g\in G\}\subset \mathrm{A}(G)'$, also $\delta_e$ zyklisch für $\mathrm{A}(G)'$, somit $\delta_e$ zyklisch und separierend für $\mathrm{A}(G)$, insbesondere $x\delta_e\mapsto x$ wohldefiniert: Schreibt man $x\in \mathrm{A}(G)$ als Matrix bzgl.\ der Basis $\delta_g$, so sind hängt der Eintrag $x_{g,h}$ nur von $gh^{-1}$ ab, also ist die Matrix \enquote{auf Diagonalen} konstant und eine Spalte (z.B. $\xi\coloneqq x\delta_e$) legt die Matrix bereits fest!
+
+Es ist $\mathrm{M}(G)=\vN(\mathrm{A}(G))$ die \emph{von $G$ erzeugte vNA}. Es gilt $x\in \mathrm{Z}(\mathrm{M}(G))$ gdw. $\xi$ konstant auf den Konjugationsklassen von $G$ ist ($\xi$ ist Spalte der Darstellungsmatrix von $x$, also indiziert durch $G$ und alle Einträge des Vektors, deren Index in der gleichen Konjugationsklasse von $G$ liegt, sollen gleich sein). Eine Gruppe $G$ heißt \emph{\enquote{infinite conjugacy class}-Gruppe (ICC)}, falls die Konjugationsklassen von $e\neq g\in G$ unendlich sind. Es ist $\mathrm{M}(G)$ Faktor gdw. $G$ ICC: Ist $G$ ICC und $x\in \mathrm{M}(G)$ konstant auf Konjugationsklassen, so muss $\xi(g)=0$ für $g\neq e$ gelten, sonst $\xi \not\in \ell^2(G)$. Ist $G$ nicht ICC und $g$ habe endliche Konjugationsklasse $\mathrm{C}(g)$, so definiere $\xi$ mit $\xi(h)=1$ für $h\in \mathrm{C}(g)$ und $0$ sonst, dann $x\not \in \C 1_{\ell^2(G)}$, aber $x\in \mathrm{Z}(\mathrm{M}(G))$.
+
+Ist $G=\Z$, dann ist $L_1=S$ der Linksshift. Es gilt: $$\mathrm{M}(\Z)=\overline{\mathrm{C}^*(1_{\ell^2(\Z)},S)}^\mathrm{stop}\cong \overline{\mathrm{C}(\mathbb{T})}^\mathrm{stop}=\mathrm{L}^\infty(\mathbb{T}).$$
+
+Die Abbildung $\tau: \mathrm{M}(G)\ni x\mapsto \langle x\delta_e, \delta_e\rangle$ ist treue, normale Spur auf $\mathrm{M}(G)$.
+
+\subsubsection{Beispiel einer ICC-Gruppe (ÜA 67)}
+
+Sei $\mathrm{S}_\infty$ die Gruppe der endlichen Permutationen auf $\N$. Dann ist $\mathrm{S}_\infty$ ICC: Sei $\id\neq \sigma \in \mathrm{S}_\infty$, außerhalb $\{1,\dots,n\}$ identisch und $1\leq k\leq n$ mit $\sigma(k)\neq k$. Definiere $\rho\in \mathrm{S}_\infty$ mit $\rho(n+1)=k$, $\rho(k)=n+1$, sonst identisch. Dann $\rho^{-1}\sigma\rho\neq \sigma$ und gleiche Konstruktion mit $n+i$ für $i>1$ liefert Unendlichkeit der Konjugationsklasse!
+
+\subsection{unendliches TP von $\mathrm{M}_k$}
+
+TODO
+
+\subsection{Spuren}
+
+Ein positives lineares Funktional $\tau$ mit $\tau(xy)=\tau(yx)$ auf einer vNA $\M$ heißt \emph{Spur}. Sie heißt \emph{treu}, falls aus $\tau(x^*x)=0$ bereits $x=0$ folgt. Beispiel: Auf $\M=\mathrm{M}_n$ ist $\tau=\frac{1}{n} \Spur$ normalisierte Spur (also Zustand).
+
+Eine Algebra mit treuer Spur besitzt keine \enquote{echten} Isometrien (wie der Rechtsshift auf $\ell^2(\N)$), d.h.\ jede Isometrie ist unitär: $u^*u=1$ und $1-uu^* \geq 0$, aus $\tau(1-uu^*)=\tau(1)-\tau(u^*u)=0$ folgt $uu^*=1$.
+
+Auf Faktoren ist eine normale Spur automatisch treu: Nutze Aussage über zentralen Träger und dass in Faktoren $z_e=1_\M$ gilt (sonst wäre $\M z_e$ echtes $\sigma-\mathrm{swop}$-abgeschlossenes zweiseitiges Ideal).
+
+\subsection{Vergleich von Projektionen}
+
+Sind $p,q\in \M$ (orthogonale) Projektionen und gibt es partielle Isometrie $v\in \M$ mit $p=v^*v$ sowie $q=vv^*$, so sind $p$ und $q$ äquivalent, schreibe $p\sim q$. 
+
+In $\B(\Hc)$: $p$ und $q$ sind genau dann äquivalent, wenn die Räume $p\Hc$ und $q\Hc$ die gleiche Dimension haben, denn $v$ ist ein isometrischer Isomorphismus zwischen den Räumen und umgekehrt gibt es zwischen Räumen gleicher Dimension einen unitären Isomorphismus. Jedoch gibt es mehr äquivalente Projektionen als unitär äquivalente Projektionen: Betrachte auf $\ell^2(\N)$ die Projektionen $1_{\ell^2(\N)}$ und $\mathrm{s}_l(S)$ wobei $S$ der Rechtsshift, dann ist $S$ partielle Isometrie zwischen den Räumen, aber es gibt keine unitäre Abbildung, die auf den Räumen Isometrie ist.
+
+Für $x\in \M$ gilt $\mathrm{s}_l(x)\sim \mathrm{s}_r(x)$ ($x=v|x|$ und $\mathrm{s}_r(x)=\mathrm{s}_r(|x|)$). Sind $(p_i),(q_i)$ paarweise orthogonal und $p_i\sim q_i$, so gilt $\sum_i p_i \sim \sum_i q_i$ (nutze $\mathrm{stop}$-Limes beschränkter monotoner Netze). Damit lässt sich zeigen, dass $\preccurlyeq$ Ordnungsrelation ist (zeige Antisymmetrie mit Cantor-Bernstein-Schröder-von Neumann). Ist $\M$ Faktor (also einzige zentrale Projektion ist $1_\Hc$) und $0\neq p,q\in \M$, dann existiert $x\in \M$ mit $pxq\neq 0$ (d.h.\ es gibt keine \enquote{disjunkten} Projektionen in Faktoren!) und es gibt Projektionen $0\neq p_1,q_1\in \M$ mit $p_1\leq p$, $q_1\leq q$ und $p_1\sim q_1$ (setze $p_1\coloneqq \mathrm{s}_l(pxq)$ und $q_1\coloneqq \mathrm{s}_r(pxq)$).
+
+Damit lässt sich das Vergleichstheorem zeigen: Es gilt immer $p\preccurlyeq q$ oder $q\preccurlyeq p$, d.h.\ die Ordnung ist total. Nutze dazu Zorn: Es gibt maximale Familie paarweise orthogonaler, äquivalenter Projektionen, die $\mathrm{stop}$-Limiten über die Summen können nicht beide ungleich $p$ und $q$ sein, sonst waren die Familien nicht maximal.
+
+\subsubsection{Typen von Projektionen}
+
+Eine Projektion $p\in \M$ heißt
+
+\begin{itemize}
+    \item \emph{endlich}, falls für $q$ mit $q\leq p, q\sim p$ folgt $p=q$. Analogie aus der Mengenlehre: $p$ ist nicht gleichmächtig zu einer echten Teilmenge!
+    \item \emph{unendlich}, falls $p$ nicht endlich.
+    \item \emph{echt unendlich}, falls $pz$ unendlich für alle zentralen Projektionen $z$. Eine unendliche Projektion in einem Faktor ist immer echt unendlich. Ist $\M$ unendlicher Faktor und $\Nc$ endlicher Faktor, so ist $1_\M \oplus 1_\Nc$ keine echt unendliche Projektion in $\M\oplus \Nc$, denn $0_\M \oplus 1_\Nc \in \mathrm{Z}(\M\oplus \Nc)$ und $0_\M\oplus 1_\Nc=1_\M \oplus 1_\Nc \cdot 0_\M \oplus 1_\Nc$ ist endlich.
+    \item \emph{rein unendlich}, falls $p\neq 0$ und für $q$ endlich mit $q\leq p$ gilt $q=0$. Beispiel: $\C\cdot 1_\Hc$. In der Mengenlehre existiert sowas nicht: Wäre unendliche Menge, die keine endlichen Teilmengen besitzt!
+    \item \emph{abelsch}, falls $p\M p$ kommutative Algebra. Beispiele: 1) $p=\chi_A$ in $L^\infty$ 2) $p$ ist Projektion auf eindimensionalen Teilraum.
+    \item \emph{minimal}, falls aus $0\neq q \leq p$ bereits $p=q$ folgt. Entspricht Einpunktmengen in der Mengenlehre.
+\end{itemize}
+
+Ist $p$ abelsch, so auch endlich ($q\leq p$, $q\sim p$, $v:q\to p$, $v,v^*\in p\M p$, also $p=vv^*=v^*v=q$). Ist $p$ minimal, so ist $\dim p\M p=1$ (denn $p\M p$ wird von den Projektionen unterhalb $p$ erzeugt), insbesondere $p$ abelsch. Ist $\M$ Faktor, so folgt aus abelsch auch minimal ($\M$ Faktor, also auch $p\M p$ Faktor und kommutativ, also $\mathrm{Z}(p\M p)=p\M p$ und somit $\dim(p\M p)=1$ und damit $p$ minimal). Im allgemeinen stimmt die Umkehrung offensichtlich nicht, dann in einer kommutativen Algebra sind alle Projektionen abelsch und es gibt Projektionen mit Unterprojektionen. Ist $p$ endlich und $q\preccurlyeq p$, dann ist auch $q$ endlich.
+
+\subsubsection{Typen von vNAen resp.\ Faktoren}
+
+Eine vNA $\M$ heißt \emph{diskret/Typ I}, falls unter jeder zentralen Projektion eine abelsche Projektion liegt. Ist $\M$ Faktor, so ist dies äquivalent dazu, dass es eine minimale Projektion gibt (nur $1_\Hc$ ist zentrale Projektion und abelsche Projektion unterhalb ist auch minimal, wenn $\M$ Faktor). Andernfalls heißt $\M$ \emph{kontinuierlich}.
+
+Ist $\M$ Faktor, so ergibt sich folgende Klassifikation:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l|c||r}
+        diskret & endlich & Typ $\Ifin$ \\
+        diskret & unendlich & Typ $\Iinf$ \\
+        \hline
+        kontinuierlich & endlich & Typ $\IIfin$ \\
+        kontinuierlich & unendlich, nicht rein unendlich & Typ $\IIinf$ \\
+        \hline
+        kontinuierlich & rein unendlich & Typ $\III$
+    \end{tabular}
+\end{table}
+
+Beispiele: 1) $\mathrm{M}_n$ ist Typ $\Ifin$ 2) $\mathrm{L}^\infty(\Omega, \mu)$ ist Typ $\Ifin$ (da abelsche Projektionen immer endlich sind) 3) $\B(\Hc)$ mit $\dim \Hc = \infty$ ist Typ $\Iinf$ 4) $\mathrm{M}(S_\infty)$ ist Typ $\IIfin$: Wir haben treue normale Spur, also sind Isometrien unitär und somit erhalten wir Endlichkeit. Da Typ $\Ifin$ isomorph zu $\mathrm{M}_n$ und jene kompakte Operatoren besitzt, muss es $\IIfin$ sein 5) $\dim \Hc = \infty$ und $\M$ Typ $\IIfin$, dann $\M \otimes \B(\Hc)$ Typ $\IIinf$ 6) mit geeignetem treuen Zustand ist unendliches Tensorprodukt von $\mathrm{M}_k$ Typ $\III$.
+
+An Beispiel 2 sieht man, dass unterhalb endlicher Projektionen noch sehr viele Projektionen liegen können, z.B. ist $\chi_{[0,1]}$ endliche Projektionen und durch $\chi_{[0,1/n]}$ sind unendlich viele verschiedene Projektionen gegeben, die alle unterhalb liegen!
 
 \end{document}
