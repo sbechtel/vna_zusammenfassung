@@ -440,4 +440,28 @@ Zu einem diskreten Faktor $\M$ gibt es eine Indexmenge $J$ mit $\M\cong \B(\ell^
 
 Ist $\A$ endlich-dimensionale C*-Algebra, so gilt $\A=\mathrm{M}_{n_1}\oplus \dots\oplus \mathrm{M}_{n_k}$: Durch Darstellung wird $\A$ zu Operatoralgebra, da endlich-dimensional auch vNA, das Zentrum ist endlich-dimensional und kommutativ, also $\mathrm{C}(\{x_1,\dots,x_k\})$, jeder Punkt entspricht einer zentralen Projektion, diese liefert Zerlegung in Typ $\Ifin$ Faktoren.
 
+\subsubsection{Klassifikation kontinuierlicher Faktoren}
+
+In einem diskreten Faktor gibt es eine minimale Projektion $p$. Zu dieser kann es keine Projektionen $p_1,p_2$ geben mit $p_1\sim p_2$ und $p_1+p_2=p$, denn aus $p$ minimal und $p_i\leq p$ folgt $p_i=0$. In kontinuierlichen Faktoren ist dies für jede Projektion möglich (Halbierungslemma) und ist die Projektion unendlich, so gibt es sogar $(p_n)_{n\in \N}$ mit $p_n\sim p$ und $p=\sum_n p_n$! Ist $(p_j)$ maximale Familie äquivalenter Projektionen, so gibt es Familie $(q_j)$ mit $p_j\sim q_j$ und $\sum_j q_j=1_\Hc$, also $\sum_j p_j \sim 1_\Hc$. Es folgt, dass alle unendlichen Projektionen äquivalent sind (zeige Äquivalenz zu $1_\Hc$), insbesondere gilt für einen Typ $\III$ Faktor $\M$ dann: $\mathcal{P}(\M)_{/\sim}=\{0,1\}$.
+
+Ist $\M$ Faktor vom Typ $\IIfin$ und $\Kc$ Hilbertraum mit $\dim(\Kc)=\infty$, so ist $\Nc\coloneqq \M \otimes \B(\Kc)$ Faktor vom Typ $\IIinf$: $\Nc$ ist Faktor, da $\M$ und $\B(\Kc)$ Faktoren, nicht endlich (Shifte die Diagonale, wenn man $1_{\Hc\otimes \Kc}$ als Operatormatrix betrachtet), nicht reinunendlich (betrachte Operatormatrix mit endlich vielen $1_\Hc$ auf der Diagonale) und kontinuierlich aus Widerspruch mit Vergleichstheorem.
+
+Umgekehrt ist jeder abzählbar zerlegbare Faktor vom Typ $\IIfin$ darstellbar als $\M\otimes \B(\ell^2(\N))$, es reicht also $\IIfin$ Faktoren zu verstehen.
+
+Es ist $\M$ genau dann Typ endlicher Faktor, wenn $\M$ eine (treue) normale Spur besitzt und Spur ist vollständige Invariante für $\mathcal{P}(\M)$, also $p\preccurlyeq q$ gdw.\ $\tr(p)\leq \tr(q)$.
+
+Für $\M$ Typ $\IIfin$ Faktor gilt $\tr(\mathcal{P}(\M))=[0,1]$ und $\tr$ ist eindeutig bestimmt: Durch sukzessive Halbierung von $1_\Hc$ erhalten wir Darstellung $1_\Hc=\sum_n q_n$ mit $\tr(q_n)=2^{-n}$. Durch dyadische Entwicklung von $\alpha\in [0,1]$ erhalten wir eine Projektion $p$ mit $\tr(p)=\alpha$ für jede normale Spur. Nun folgt für eine Projektion $q$ mit $\alpha\coloneqq \tr_1(q)$, dass $q\sim p_\alpha$, also $\tr_1(q)=\tr_1(p_\alpha)=\tr_2(p_\alpha)=\tr_2(q)$, also Eindeutigkeit der treuen, normalen Spur.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cc}
+        $\mathrm{I}_n$ & $\{0,\dots,n\}$ \\
+        $\mathrm{I}_\infty$ & $\N \cup \{\infty\}$ \\
+        $\IIfin$ & $[0,1]$ \\
+        $\IIinf$ & $[0,\infty]$ \\
+        $\III$ & $\{0,1\}$
+    \end{tabular}
+\end{table}
+
+
 \end{document}
